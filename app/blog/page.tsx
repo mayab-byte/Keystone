@@ -9,13 +9,13 @@ import {
   KeystoneHeader,
 } from "../shared";
 import { articles } from "../articles";
+import { abs } from "../site";
 
 export const metadata: Metadata = {
   title: "בלוג — Keystone · מדריכים על השקעות, מיסוי ותכנון פיננסי",
   description:
     "מדריכים קצרים וברורים על מיסוי השקעות, פוליסות חיסכון ותכנון פיננסי למשפחה — מאת שלומי אחלופי ושלומי פרידמן.",
-  // Internal design preview for the client — keep out of search engines.
-  robots: { index: false, follow: false },
+  alternates: { canonical: abs("/blog") },
 };
 
 const dateFmt = new Intl.DateTimeFormat("he-IL", { dateStyle: "long" });

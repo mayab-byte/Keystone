@@ -10,6 +10,7 @@ import {
   KeystoneHeader,
 } from "../../shared";
 import { articles, author, disclaimer, getArticle } from "../../articles";
+import { abs, articleLd, breadcrumbLd, faqLd, site } from "../../site";
 
 export function generateStaticParams() {
   return articles.map(({ slug }) => ({ slug }));
@@ -26,8 +27,16 @@ export async function generateMetadata({
   return {
     title: `${article.title} — Keystone`,
     description: article.excerpt,
-    // Internal design preview for the client — keep out of search engines.
-    robots: { index: false, follow: false },
+    alternates: { canonical: abs(`/blog/${slug}`) },
+    openGraph: {
+      type: "article",
+      title: article.title,
+      description: article.excerpt,
+      url: abs(`/blog/${slug}`),
+      images: [`${site.url}${article.image}`],
+      publishedTime: article.datePublished,
+      modifiedTime: article.dateModified,
+    },
   };
 }
 
@@ -44,6 +53,38 @@ export default async function KeystoneArticlePage({
 
   return (
     <div dir="rtl" lang="he" className="ks-scope bg-white text-black" style={brand}>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(
+            articleLd({
+              title: article.title,
+              excerpt: article.excerpt,
+              image: article.image,
+              datePublished: article.datePublished,
+              dateModified: article.dateModified,
+              slug,
+              authorName: author.name,
+            }),
+          ),
+        }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqLd(article.faq)) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(
+            breadcrumbLd([
+              { name: "בית", path: "/" },
+              { name: "בלוג", path: "/blog" },
+              { name: article.title, path: `/blog/${slug}` },
+            ]),
+          ),
+        }}
+      />
       <KeystoneHeader />
       <main id="main">
         {/* ── Article header ─────────────────────────────────────────── */}

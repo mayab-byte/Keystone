@@ -17,6 +17,7 @@ import ScrollHero from "./ScrollHero";
 import LeadForm from "./LeadForm";
 import { articles } from "./articles";
 import { services } from "./services";
+import { abs } from "./site";
 import {
   BASE,
   brand,
@@ -31,8 +32,7 @@ export const metadata: Metadata = {
   title: "Keystone — שלומי אחלופי ושלומי פרידמן · פיננסים · פנסיוני · פרישה · ביטוח",
   description:
     "Keystone — סוכנות 360 של שלומי אחלופי ושלומי פרידמן. תכנון השקעות חכם מס, פנסיוני, פרישה וביטוח בליווי אישי.",
-  // Internal design preview for the client — keep out of search engines.
-  robots: { index: false, follow: false },
+  alternates: { canonical: abs("/") },
 };
 
 const reasons = [

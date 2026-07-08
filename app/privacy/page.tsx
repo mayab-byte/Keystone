@@ -4,8 +4,6 @@ import { brand, contact, KeystoneFooter, KeystoneHeader } from "../shared";
 export const metadata: Metadata = {
   title: "מדיניות פרטיות — Keystone",
   description: "מדיניות הגנת הפרטיות של אתר Keystone.",
-  // Internal design preview for the client — keep out of search engines.
-  robots: { index: false, follow: false },
 };
 
 // Placeholder legal entity details — swap for the client's real ones

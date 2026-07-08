@@ -11,6 +11,7 @@ import {
 import LeadForm from "../../LeadForm";
 import { disclaimer } from "../../articles";
 import { getService, services } from "../../services";
+import { abs, breadcrumbLd, faqLd, serviceLd, site } from "../../site";
 import ServiceHero from "./ServiceHero";
 
 export function generateStaticParams() {
@@ -28,8 +29,14 @@ export async function generateMetadata({
   return {
     title: `${service.title} — Keystone`,
     description: service.short,
-    // Internal design preview for the client — keep out of search engines.
-    robots: { index: false, follow: false },
+    alternates: { canonical: abs(`/services/${slug}`) },
+    openGraph: {
+      type: "website",
+      title: `${service.title} — Keystone`,
+      description: service.short,
+      url: abs(`/services/${slug}`),
+      images: [`${site.url}${service.image}`],
+    },
   };
 }
 
@@ -46,6 +53,30 @@ export default async function KeystoneServicePage({
 
   return (
     <div dir="rtl" lang="he" className="ks-scope bg-white text-black" style={brand}>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(
+            serviceLd({ title: service.title, short: service.short, slug }),
+          ),
+        }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqLd(service.faq)) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(
+            breadcrumbLd([
+              { name: "בית", path: "/" },
+              { name: "שירותים", path: "/#services" },
+              { name: service.title, path: `/services/${slug}` },
+            ]),
+          ),
+        }}
+      />
       <KeystoneHeader />
       <main id="main">
         <ServiceHero

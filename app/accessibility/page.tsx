@@ -4,8 +4,6 @@ import { brand, contact, KeystoneFooter, KeystoneHeader } from "../shared";
 export const metadata: Metadata = {
   title: "הצהרת נגישות — Keystone",
   description: "הצהרת הנגישות של אתר Keystone לפי תקן ישראלי 5568 ברמה AA.",
-  // Internal design preview for the client — keep out of search engines.
-  robots: { index: false, follow: false },
 };
 
 const LAST_UPDATED = "7 ביולי 2026";

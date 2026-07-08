@@ -6,13 +6,13 @@ import {
   KeystoneFooter,
   KeystoneHeader,
 } from "../shared";
+import { abs } from "../site";
 
 export const metadata: Metadata = {
   title: "אודות — Keystone · שלומי אחלופי ושלומי פרידמן",
   description:
     "Keystone — סוכנות 360 של שלומי אחלופי ושלומי פרידמן. פיננסים, פנסיוני, פרישה וביטוח בליווי אישי, עם ניסיון מצטבר של 17 שנה.",
-  // Internal design preview for the client — keep out of search engines.
-  robots: { index: false, follow: false },
+  alternates: { canonical: abs("/about") },
 };
 
 export default function KeystoneAboutPage() {

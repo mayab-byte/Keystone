@@ -9,13 +9,13 @@ import {
   KeystoneFooter,
   KeystoneHeader,
 } from "../shared";
+import { abs } from "../site";
 
 export const metadata: Metadata = {
   title: "צור קשר — Keystone",
   description:
     "השאירו פרטים או פנו ישירות — שיחת היכרות ראשונה ללא עלות וללא התחייבות. Keystone · פיננסים, פנסיוני, פרישה וביטוח.",
-  // Internal design preview for the client — keep out of search engines.
-  robots: { index: false, follow: false },
+  alternates: { canonical: abs("/contact") },
 };
 
 export default function KeystoneContactPage() {
