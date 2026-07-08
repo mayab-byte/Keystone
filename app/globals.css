@@ -1,0 +1,42 @@
+@import "tailwindcss";
+
+/* ───────────────────────────────────────────────────────────────────────────
+   Keystone — design tokens
+   Hebrew type: Assistant (site-wide). English type: Times New Roman MT
+   (set per-element via the enSerif constant in app/shared.tsx).
+   Brand palette lives in the --ks-* variables applied on each page root.
+   ─────────────────────────────────────────────────────────────────────────── */
+
+@theme {
+  --color-ground: #faf8f4;
+  --color-ink: #181822;
+
+  --font-sans: var(--font-assistant), ui-sans-serif, system-ui, sans-serif;
+
+  --shadow-soft: 0 1px 2px rgba(24, 24, 34, 0.04),
+    0 8px 24px -12px rgba(24, 24, 34, 0.12);
+  --shadow-lift: 0 2px 4px rgba(24, 24, 34, 0.05),
+    0 24px 48px -20px rgba(24, 24, 34, 0.22);
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  background: #fff;
+  color: #000;
+  font-family: var(--font-sans);
+  font-feature-settings: "kern";
+  text-rendering: optimizeLegibility;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
