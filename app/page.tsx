@@ -16,6 +16,7 @@ import Counters from "./Counters";
 import ScrollHero from "./ScrollHero";
 import LeadForm from "./LeadForm";
 import { articles } from "./articles";
+import { services } from "./services";
 import {
   BASE,
   brand,
@@ -33,33 +34,6 @@ export const metadata: Metadata = {
   // Internal design preview for the client — keep out of search engines.
   robots: { index: false, follow: false },
 };
-
-const services = [
-  {
-    num: "01",
-    title: "השקעות חכמות",
-    img: "/services/investments.jpg",
-    text: "בניית תיק השקעות בפוליסות חיסכון ומוצרים מנוהלים — מעבר בין מסלולים בלי אירוע מס בדרך, כך שהרווח ממשיך לעבוד בשבילכם.",
-  },
-  {
-    num: "02",
-    title: "תכנון פנסיוני",
-    img: "/services/pension.jpg",
-    text: "מיפוי וייעול החיסכון הפנסיוני: השוואת מסלולים ודמי ניהול, איחוד קופות והתאמת התיק לשלב שלכם בחיים.",
-  },
-  {
-    num: "03",
-    title: "ביטוח",
-    img: "/services/insurance.jpg",
-    text: "התאמת תיק הביטוח בדיוק לצרכים — בריאות, חיים ואובדן כושר עבודה. בלי כפילויות, בלי חורים בכיסוי.",
-  },
-  {
-    num: "04",
-    title: "תכנון פרישה",
-    img: "/services/retirement.jpg",
-    text: "מיצוי זכויות והטבות מס, תכנון תזרים לפנסיה ומעבר רגוע ובטוח לפרק הבא של החיים.",
-  },
-];
 
 const reasons = [
   {
@@ -208,10 +182,10 @@ export default function KeystonePage() {
             <span className="md:hidden">ארבעה תחומי הליווי שלנו</span>
           </p>
           <div className="svc-rail mt-10">
-            {services.map(({ num, title, text, img }) => (
-              <Link key={title} href="/#contact" className="svc-card" aria-label={title}>
+            {services.map(({ num, title, short, image, slug }) => (
+              <Link key={slug} href={`/services/${slug}`} className="svc-card" aria-label={title}>
                 {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img src={`${BASE}${img}`} alt="" aria-hidden className="svc-bg" />
+                <img src={`${BASE}${image}`} alt="" aria-hidden className="svc-bg" />
                 <span className="svc-scrim" aria-hidden />
                 <span className="svc-num">
                   <span>{num}</span>
@@ -219,7 +193,7 @@ export default function KeystonePage() {
                 <div className="svc-body">
                   <h3 className="text-2xl font-bold">{title}</h3>
                   <p className="mt-2 max-w-[36ch] text-[14.5px] leading-relaxed text-white/90">
-                    {text}
+                    {short}
                   </p>
                   <span className="svc-cta mt-4 inline-flex items-center gap-2 font-bold">
                     קראו עוד

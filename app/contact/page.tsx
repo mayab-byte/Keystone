@@ -77,7 +77,7 @@ export default function KeystoneContactPage() {
           <div className="rounded-3xl border border-black/8 bg-ground p-7 shadow-soft md:p-8">
             <h2 className="text-xl font-bold">השאירו פרטים — נחזור עוד היום</h2>
             <div className="mt-5">
-              <LeadForm whatsappNumber={contact.whatsappNumber} />
+              <LeadForm whatsappNumber={contact.whatsappNumber} tone="light" />
             </div>
           </div>
         </section>
