@@ -3,7 +3,7 @@
 import { useCallback, useEffect, useRef, useState } from "react";
 import { CalendarCheck, ChevronDown } from "lucide-react";
 import { WhatsappIcon } from "@/components/icons/social";
-import { contact, Dot, enSerif, GradientText } from "./shared";
+import { BASE, contact, Dot, enSerif, GradientText } from "./shared";
 
 /* Scroll-driven hero: the intro video is pre-split into webp frames
    (public/hero). The section pins for ~4 viewport heights;
@@ -13,7 +13,7 @@ import { contact, Dot, enSerif, GradientText } from "./shared";
 
 const FRAME_COUNT = 61;
 const frameSrc = (i: number) =>
-  `/hero/frame-${String(i + 1).padStart(3, "0")}.webp`;
+  `${BASE}/hero/frame-${String(i + 1).padStart(3, "0")}.webp`;
 
 /* Each stage fades/rises in, holds, then fades out (except the last, which
    holds to the end). Windows are fractions of the pinned scroll progress. */

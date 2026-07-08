@@ -21,6 +21,7 @@ import ScrollHero from "./ScrollHero";
 import LeadForm from "./LeadForm";
 import { articles } from "./articles";
 import {
+  BASE,
   brand,
   contact,
   GradientText,
@@ -130,7 +131,7 @@ export default function KeystonePage() {
           <figure>
             <div className="relative overflow-hidden rounded-3xl shadow-lift">
               <Image
-                src="/founders.webp"
+                src={`${BASE}/founders.webp`}
                 alt="שלומי אחלופי ושלומי פרידמן — מייסדי Keystone"
                 width={2000}
                 height={1418}

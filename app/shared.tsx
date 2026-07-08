@@ -31,7 +31,9 @@ export const contact = {
   email: "office@keystone-fin.co.il",
 };
 
-export const BASE = "";
+// Base path for hosting under a sub-directory (e.g. GitHub Pages "/Keystone").
+// Empty in local dev; set via NEXT_PUBLIC_BASE_PATH at build time.
+export const BASE = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
 
 export function GradientText({ children }: { children: React.ReactNode }) {
   return (
@@ -48,7 +50,7 @@ export function Wordmark({ className = "h-9" }: { className?: string }) {
   return (
     <span className="inline-flex items-center gap-2.5">
       {/* eslint-disable-next-line @next/next/no-img-element */}
-      <img src="/mark.svg" alt="" className={className} />
+      <img src={`${BASE}/mark.svg`} alt="" className={className} />
       <span
         className="text-2xl font-bold tracking-tight"
         style={{ fontFamily: enSerif }}
