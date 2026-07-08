@@ -8,15 +8,15 @@
 
 ## 1. החלפות placeholder לפני עלייה לאוויר (קריטי)
 
-- [ ] טלפון אמיתי במקום `050-000-0000` (מוגדר במקום אחד: `app/shared.tsx` → `contact`)
-- [ ] מספר וואטסאפ אמיתי במקום `972500000000` (אותו קובץ — מזין גם את הטופס וגם את כל הכפתורים)
+- [ ] טלפון אמיתי במקום `050-000-0000` (מוגדר במקום אחד: `app/site.ts` → `contact`)
+- [ ] מספר וואטסאפ אמיתי במקום `972500000000` (אותו קובץ — מזין גם את הטופס, גם את הכפתורים וגם את ה-JSON-LD)
 - [ ] אימייל אמיתי במקום `office@keystone-fin.co.il`
 - [ ] שם חברה רשמי + ח.פ. בעמוד מדיניות הפרטיות (`privacy/page.tsx` → `COMPANY`)
 - [ ] שם רכז/ת נגישות אמיתי בעמוד הצהרת הנגישות (`accessibility/page.tsx`)
 - [ ] מספרי רישיון (משווק פנסיוני / סוכן ביטוח) של שני השותפים — להציג בפוטר ובעמוד אודות
 - [ ] אישור הלקוחות לנוסח ההמלצות והסיפורים במאמרים (דוד, לקוח הדירה, לקוחת ה-950K)
-- [ ] הסרת `robots: { index: false }` מכל עמודי Keystone (כרגע מוגדר בכולם כי זה preview)
-- [ ] העברה לדומיין אמיתי + עדכון כל הקישורים האבסולוטיים
+- [ ] הפעלת אינדוקס במנועי החיפוש: בנייה עם `NEXT_PUBLIC_INDEXABLE=true` (כרגע ברירת המחדל `false` כדי שהתצוגה ב-github.io לא תאונדקס). המנגנון מרוכז ב-`app/site.ts`.
+- [ ] העברה לדומיין אמיתי: בנייה עם `NEXT_PUBLIC_SITE_URL=https://<דומיין>` ובלי `NEXT_PUBLIC_BASE_PATH`. כל הכתובות האבסולוטיות (canonical, OG, sitemap, JSON-LD) נגזרות אוטומטית מ-`site.url`.
 
 ## 2. טופס לידים — מעבר מ-WhatsApp-prefill ל-backend אמיתי
 
@@ -33,8 +33,8 @@
 
 ## 3. GSO — תשתית שמכונות יכולות לקרוא (הדיברה השלישית)
 
-- [ ] `robots.txt` שמתיר במפורש: GPTBot, ClaudeBot, PerplexityBot, Google-Extended, OAI-SearchBot, בוטים גנרטיביים נוספים
-- [ ] `sitemap.xml` מעודכן ומקושר מ-robots.txt
+- ✅ `robots.txt` נוצר אוטומטית (`app/robots.ts`) ומקושר ל-sitemap. בפרודקשן מתיר סריקה; בתצוגה חוסם. **נותר**: להוסיף allow מפורש לבוטים גנרטיביים (GPTBot, ClaudeBot, PerplexityBot, Google-Extended, OAI-SearchBot) אם רוצים בקרה פרטנית.
+- ✅ `sitemap.xml` נוצר אוטומטית (`app/sitemap.ts`) — כל 13 העמודים, כתובות אבסולוטיות, מקושר מ-robots.txt בפרודקשן
 - [ ] כל התוכן הקריטי ב-HTML סטטי (העמודים כבר Server Components — לוודא שנשאר כך; לבדוק עם `curl` שהתוכן נראה ללא JS)
 - [ ] יעדי ביצועים: TTFB < 600ms, LCP < 2.5s במובייל
 - [ ] CDN, lazy loading לתמונות שאינן above-the-fold (תמונת ההירו נשארת `priority`)
@@ -43,14 +43,14 @@
 
 ## 4. GSO — Schema / JSON-LD (הדיברה הרביעית)
 
-- [ ] `Organization` על כל העמודים: שם, לוגו, כתובת, טלפון + `sameAs` (פייסבוק, לינקדאין, דירקטוריות)
-- [ ] `Person` לשלומי אחלופי ולשלומי פרידמן (author bios כבר קיימים בתוכן)
-- [ ] `Article` לכל מאמר בלוג: `author`, `datePublished`, `dateModified`, `headline`, `image`
-      (השדות כבר קיימים ב-`articles.ts` — נשאר רק להזרים ל-JSON-LD)
-- [ ] `FAQPage` לכל מאמר (ה-FAQ כבר כתוב בכל מאמר) ולעמוד הבית
+- ✅ `Organization` (FinancialService) על כל העמודים: שם, לוגו, תמונה, טלפון, אימייל, `founder`. **נותר**: `sameAs` (פייסבוק/לינקדאין/דירקטוריות) + כתובת פיזית כשיהיו
+- ✅ `WebSite` על כל העמודים; `Service` בכל עמוד שירות; `BreadcrumbList` בעמודי שירות ובכתבות
+- ✅ `Article` לכל מאמר: `author`, `datePublished`, `dateModified`, `headline`, `image`, `publisher`
+- ✅ `FAQPage` לכל מאמר ולכל עמוד שירות (מוזרם מה-FAQ הקיים). **נותר**: FAQ לעמוד הבית אם יתווסף
 - [ ] `HowTo` למאמרים עם שלבים ממוספרים (מאמר הדירה ומאמר המס)
-- [ ] בדיקת Rich Results Test של גוגל על כל עמוד מרכזי
-- [ ] עקביות NAP: פרטי הארגון ב-schema זהים לכל מקום אחר ברשת
+- [ ] בדיקת Rich Results Test של גוגל על כל עמוד מרכזי (אחרי go-live)
+- [ ] עקביות NAP: פרטי הארגון ב-schema זהים לכל מקום אחר ברשת (תלוי בפרטים אמיתיים מסעיף 1)
+- מרוכז ב-`app/site.ts` (בוני ה-JSON-LD) — עדכון פרטים במקום אחד מזרים לכל הסכימות
 
 ## 5. GSO — ארכיטקטורה סמנטית (הדיברה החמישית)
 
@@ -97,3 +97,8 @@
 - ✅ רספונסיביות מלאה + סרגל CTA דביק במובייל (44px+) + safe-area
 - ✅ prefers-reduced-motion מכובד גלובלית
 - ✅ alt לתמונות משמעות, aria-hidden לדקורטיביים, מבנה כותרות היררכי
+- ✅ 4 עמודי שירות (`/services/<slug>`) עם הירו אינטראקטיבי, תוכן, FAQ וטופס יצירת קשר; מקושרים מסקשן השירותים בעמוד הבית
+- ✅ עמודי `/about` ו-`/contact` נפרדים (ההדר מקשר אליהם, לא עוגן)
+- ✅ SEO: `sitemap.xml` + `robots.txt` אוטומטיים, `metadataBase`, Open Graph + Twitter Card עם תמונת שיתוף ממותגת (`public/og.jpg`), canonical ייחודי לכל עמוד, ומטא-דאטה (title/description) ייחודית לכל עמוד
+- ✅ JSON-LD: Organization + WebSite באתר כולו; Article + FAQPage + BreadcrumbList בכתבות; Service + FAQPage + BreadcrumbList בעמודי שירות
+- ✅ הטופס מודע-רקע (tone dark/light) — קריאוּת AA בכל רקע; פריסת שורה רחבה בדסקטופ בעמודי השירות
