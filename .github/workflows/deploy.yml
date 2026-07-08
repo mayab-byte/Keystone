@@ -2,7 +2,8 @@ name: Deploy to GitHub Pages
 
 on:
   push:
-    branches: [main, claude/keystone-repo-setup-dxydmb]
+    # GitHub Pages deploys only from the repo's default branch (environment gate).
+    branches: [claude/keystone-repo-setup-dxydmb]
   workflow_dispatch:
 
 # Allow the workflow to publish to GitHub Pages

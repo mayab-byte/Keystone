@@ -5,14 +5,10 @@ import {
   ArrowLeft,
   BadgePercent,
   Calculator,
-  ChartLine,
   Handshake,
   Mail,
   Phone,
-  PiggyBank,
   Quote,
-  ShieldCheck,
-  Sunset,
   Users,
 } from "lucide-react";
 import { WhatsappIcon } from "@/components/icons/social";
@@ -40,23 +36,27 @@ export const metadata: Metadata = {
 
 const services = [
   {
-    Icon: ChartLine,
-    title: "השקעות חכמות מס",
-    text: "בניית תיק השקעות בפוליסות חיסכון ומוצרים מנוהלים — מעבר בין מסלולי השקעה בלי אירוע מס בדרך, כך שהרווח ממשיך לעבוד בשבילכם.",
+    num: "01",
+    title: "השקעות חכמות",
+    img: "/services/investments.jpg",
+    text: "בניית תיק השקעות בפוליסות חיסכון ומוצרים מנוהלים — מעבר בין מסלולים בלי אירוע מס בדרך, כך שהרווח ממשיך לעבוד בשבילכם.",
   },
   {
-    Icon: PiggyBank,
+    num: "02",
     title: "תכנון פנסיוני",
+    img: "/services/pension.jpg",
     text: "מיפוי וייעול החיסכון הפנסיוני: השוואת מסלולים ודמי ניהול, איחוד קופות והתאמת התיק לשלב שלכם בחיים.",
   },
   {
-    Icon: ShieldCheck,
+    num: "03",
     title: "ביטוח",
+    img: "/services/insurance.jpg",
     text: "התאמת תיק הביטוח בדיוק לצרכים — בריאות, חיים ואובדן כושר עבודה. בלי כפילויות, בלי חורים בכיסוי.",
   },
   {
-    Icon: Sunset,
+    num: "04",
     title: "תכנון פרישה",
+    img: "/services/retirement.jpg",
     text: "מיצוי זכויות והטבות מס, תכנון תזרים לפנסיה ומעבר רגוע ובטוח לפרק הבא של החיים.",
   },
 ];
@@ -203,23 +203,33 @@ export default function KeystonePage() {
             eyebrow="השירותים שלנו"
             title="ארבעה תחומים. תמונה אחת שלמה."
           />
-          <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
-            {services.map(({ Icon, title, text }) => (
-              <article
-                key={title}
-                className="group rounded-2xl border border-black/8 bg-white p-6 shadow-soft transition-all hover:-translate-y-1 hover:shadow-lift"
-              >
-                <span
-                  className="inline-flex h-12 w-12 items-center justify-center rounded-xl text-white"
-                  style={{ backgroundImage: "var(--ks-grad)" }}
-                >
-                  <Icon className="h-6 w-6" />
+          <p className="mt-4 text-center text-[15px] text-black/55">
+            <span className="hidden md:inline">גללו הצידה כדי לגלות את כל השירותים</span>
+            <span className="md:hidden">ארבעה תחומי הליווי שלנו</span>
+          </p>
+          <div className="svc-rail mt-10">
+            {services.map(({ num, title, text, img }) => (
+              <Link key={title} href="/#contact" className="svc-card" aria-label={title}>
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img src={`${BASE}${img}`} alt="" aria-hidden className="svc-bg" />
+                <span className="svc-scrim" aria-hidden />
+                <span className="svc-num">
+                  <span>{num}</span>
                 </span>
-                <h3 className="mt-5 text-xl font-bold">{title}</h3>
-                <p className="mt-2 text-[15px] leading-relaxed text-black/60">
-                  {text}
-                </p>
-              </article>
+                <div className="svc-body">
+                  <h3 className="text-2xl font-bold">{title}</h3>
+                  <p className="mt-2 max-w-[36ch] text-[14.5px] leading-relaxed text-white/90">
+                    {text}
+                  </p>
+                  <span className="svc-cta mt-4 inline-flex items-center gap-2 font-bold">
+                    קראו עוד
+                    <span className="svc-chip inline-flex h-8 w-8 items-center justify-center rounded-full bg-white/15 backdrop-blur">
+                      <ArrowLeft aria-hidden className="h-4 w-4" />
+                    </span>
+                  </span>
+                </div>
+                <span className="svc-accent" aria-hidden />
+              </Link>
             ))}
           </div>
         </div>
@@ -317,8 +327,15 @@ export default function KeystonePage() {
             {articles.map((a) => (
               <article
                 key={a.slug}
-                className="flex flex-col rounded-2xl border border-black/8 bg-white p-7 shadow-soft transition-all hover:-translate-y-1 hover:shadow-lift"
+                className="flex flex-col overflow-hidden rounded-2xl border border-black/8 bg-white shadow-soft transition-all hover:-translate-y-1 hover:shadow-lift"
               >
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src={`${BASE}${a.image}`}
+                  alt=""
+                  className="aspect-[16/10] w-full object-cover"
+                />
+                <div className="flex flex-1 flex-col p-7">
                 <p className="text-sm text-black/60">
                   <time dateTime={a.datePublished}>
                     {new Intl.DateTimeFormat("he-IL", { dateStyle: "long" }).format(
@@ -348,6 +365,7 @@ export default function KeystonePage() {
                     <ArrowLeft aria-hidden className="h-4 w-4" />
                   </Link>
                 </p>
+                </div>
               </article>
             ))}
           </div>

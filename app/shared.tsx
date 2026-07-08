@@ -46,18 +46,11 @@ export function GradientText({ children }: { children: React.ReactNode }) {
   );
 }
 
-export function Wordmark({ className = "h-9" }: { className?: string }) {
+export function Wordmark({ className = "h-10" }: { className?: string }) {
   return (
-    <span className="inline-flex items-center gap-2.5">
-      {/* eslint-disable-next-line @next/next/no-img-element */}
-      <img src={`${BASE}/mark.svg`} alt="" className={className} />
-      <span
-        className="text-2xl font-bold tracking-tight"
-        style={{ fontFamily: enSerif }}
-      >
-        <GradientText>Keystone</GradientText>
-      </span>
-    </span>
+    // Full brand logo (symbol + wordmark + tagline, white text on dark).
+    // eslint-disable-next-line @next/next/no-img-element
+    <img src={`${BASE}/logo-full.png`} alt="Keystone" className={`w-auto ${className}`} />
   );
 }
 
@@ -113,13 +106,13 @@ export function KeystoneHeader() {
       <header className="sticky top-0 z-40 border-b border-white/10 bg-black text-white">
         <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-5">
           <Link href="/" aria-label="Keystone — לעמוד הבית">
-            <Wordmark className="h-8" />
+            <Wordmark className="h-11" />
           </Link>
           <nav
             aria-label="ניווט ראשי"
             className="hidden items-center gap-7 text-sm font-medium md:flex"
           >
-            <Link href="/#about" className="hover:text-(--ks-green)">
+            <Link href="/about" className="hover:text-(--ks-green)">
               אודות
             </Link>
             <Link href="/#services" className="hover:text-(--ks-green)">
@@ -128,12 +121,12 @@ export function KeystoneHeader() {
             <Link href="/blog" className="hover:text-(--ks-green)">
               בלוג
             </Link>
-            <Link href="/#contact" className="hover:text-(--ks-green)">
+            <Link href="/contact" className="hover:text-(--ks-green)">
               צור קשר
             </Link>
           </nav>
           <Link
-            href="/#contact"
+            href="/contact"
             className="rounded-full px-5 py-2.5 text-sm font-bold text-black shadow-soft transition-transform hover:-translate-y-0.5"
             style={{ backgroundImage: "var(--ks-grad)" }}
           >
@@ -150,8 +143,14 @@ export function KeystoneFooter() {
     <>
       <footer className="border-t border-white/10 bg-black pb-10 pt-8 text-white">
         <div className="mx-auto flex max-w-6xl flex-col items-center gap-4 px-5 text-center">
-          <Wordmark className="h-7" />
-          <nav aria-label="קישורים משפטיים" className="flex flex-wrap justify-center gap-x-6 gap-y-2 text-sm">
+          <Wordmark className="h-12" />
+          <nav aria-label="קישורי ניווט" className="flex flex-wrap justify-center gap-x-6 gap-y-2 text-sm">
+            <Link href="/about" className="text-white/75 underline-offset-4 hover:text-white hover:underline">
+              אודות
+            </Link>
+            <Link href="/contact" className="text-white/75 underline-offset-4 hover:text-white hover:underline">
+              צור קשר
+            </Link>
             <Link href="/blog" className="text-white/75 underline-offset-4 hover:text-white hover:underline">
               בלוג
             </Link>

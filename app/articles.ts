@@ -16,6 +16,7 @@ export type ArticleSection = {
 export type Article = {
   slug: string;
   title: string;
+  image: string;
   excerpt: string;
   directAnswer: string;
   datePublished: string;
@@ -39,6 +40,7 @@ export const articles: Article[] = [
   {
     slug: "tax-on-portfolio-changes",
     title: "כמה מס אתם משלמים כשהבנק משנה כיוון בתיק ההשקעות שלכם?",
+    image: "/blog/tax-on-portfolio-changes.jpg",
     excerpt:
       "כל מכירה בתיק מנוהל או מיועץ היא אירוע מס של 25% על הרווח הריאלי. כך תחשבו כמה זה עולה לכם בשנה — ומה האלטרנטיבה.",
     directAnswer:
@@ -111,6 +113,7 @@ export const articles: Article[] = [
   {
     slug: "savings-policy-vs-managed-portfolio",
     title: "מה ההבדל בין פוליסת חיסכון לתיק מנוהל בבנק?",
+    image: "/blog/savings-policy-vs-managed-portfolio.jpg",
     excerpt:
       "שני המוצרים משקיעים בשוק ההון — אבל שונים במיסוי, בדמי הניהול ובגמישות. טבלת השוואה מסודרת, בלי ז'רגון.",
     directAnswer:
@@ -184,6 +187,7 @@ export const articles: Article[] = [
   {
     slug: "help-children-buy-home",
     title: "איך עוזרים לילדים להגיע לדירה בלי לפרק את החיסכון?",
+    image: "/blog/help-children-buy-home.jpg",
     excerpt:
       "משיכה חכמה מתוך תוכנית השקעה מאפשרת לתת לילד הון עצמי לדירה — בלי לעצור את הצמיחה של שאר הכסף. כך עושים את זה נכון.",
     directAnswer:

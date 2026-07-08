@@ -2,6 +2,7 @@ import Link from "next/link";
 import type { Metadata } from "next";
 import { ArrowLeft, CalendarDays, Clock } from "lucide-react";
 import {
+  BASE,
   brand,
   GradientText,
   KeystoneFooter,
@@ -41,7 +42,14 @@ export default function KeystoneBlogPage() {
           <ul className="grid gap-6 md:grid-cols-3">
             {articles.map((a) => (
               <li key={a.slug} className="h-full">
-                <article className="flex h-full flex-col rounded-2xl border border-black/8 bg-white p-7 shadow-soft transition-all hover:-translate-y-1 hover:shadow-lift">
+                <article className="flex h-full flex-col overflow-hidden rounded-2xl border border-black/8 bg-white shadow-soft transition-all hover:-translate-y-1 hover:shadow-lift">
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img
+                    src={`${BASE}${a.image}`}
+                    alt=""
+                    className="aspect-[16/10] w-full object-cover"
+                  />
+                  <div className="flex flex-1 flex-col p-7">
                   <p className="flex flex-wrap items-center gap-x-4 gap-y-1 text-sm text-black/60">
                     <span className="inline-flex items-center gap-1.5">
                       <CalendarDays aria-hidden className="h-4 w-4" />
@@ -74,6 +82,7 @@ export default function KeystoneBlogPage() {
                       <ArrowLeft aria-hidden className="h-4 w-4" />
                     </Link>
                   </p>
+                  </div>
                 </article>
               </li>
             ))}

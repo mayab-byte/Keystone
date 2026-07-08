@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { ArrowRight, CalendarDays, Clock } from "lucide-react";
 import {
+  BASE,
   brand,
   GradientText,
   KeystoneFooter,
@@ -84,6 +85,14 @@ export default async function KeystoneArticlePage({
         </header>
 
         <article className="mx-auto max-w-3xl px-5 py-12 md:py-16">
+          {/* Hero image */}
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src={`${BASE}${article.image}`}
+            alt=""
+            className="mb-10 aspect-[16/9] w-full rounded-2xl object-cover shadow-lift"
+          />
+
           {/* Direct answer first — the reader gets the value in the first
               100 words, before any background */}
           <p className="text-lg font-medium leading-relaxed">
