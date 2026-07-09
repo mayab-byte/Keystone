@@ -83,7 +83,7 @@ export default function KeystonePrivacyPage() {
       <KeystoneHeader />
       <main id="main">
         <header className="bg-black py-14 text-white">
-          <div className="mx-auto max-w-3xl px-5">
+          <div className="reveal-down mx-auto max-w-3xl px-5">
             <h1 className="text-3xl font-bold sm:text-4xl">מדיניות פרטיות</h1>
             <p className="mt-3 text-white/70">עדכון אחרון: {LAST_UPDATED}</p>
           </div>

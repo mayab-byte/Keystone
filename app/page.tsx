@@ -16,6 +16,7 @@ import Counters from "./Counters";
 import ScrollHero from "./ScrollHero";
 import ServicesScroller from "./ServicesScroller";
 import LeadForm from "./LeadForm";
+import Marquee from "./Marquee";
 import { articles } from "./articles";
 import { services } from "./services";
 import { abs } from "./site";
@@ -339,6 +340,8 @@ export default function KeystonePage() {
           </p>
         </div>
       </section>
+
+      <Marquee />
 
       {/* ── Contact ────────────────────────────────────────────────────── */}
       <section

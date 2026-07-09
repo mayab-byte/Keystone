@@ -26,7 +26,7 @@ export default function KeystoneBlogPage() {
       <KeystoneHeader />
       <main id="main">
         <section className="bg-black py-16 text-white md:py-20">
-          <div className="mx-auto max-w-6xl px-5 text-center">
+          <div className="reveal-down mx-auto max-w-6xl px-5 text-center">
             <p className="text-sm font-bold text-(--ks-green)">הבלוג של Keystone</p>
             <h1 className="mt-2 text-4xl font-bold sm:text-5xl">
               ידע ששווה <GradientText>כסף.</GradientText>

@@ -59,7 +59,7 @@ export default function ServiceHero({
             "linear-gradient(to top, rgba(4,20,28,0.90) 0%, rgba(4,20,28,0.5) 45%, rgba(4,20,28,0.28) 100%)",
         }}
       />
-      <div className="relative mx-auto flex h-full max-w-5xl flex-col justify-end px-5 pb-10 text-white md:pb-12">
+      <div className="reveal-down relative mx-auto flex h-full max-w-5xl flex-col justify-end px-5 pb-10 text-white md:pb-12">
         <span
           aria-hidden
           className="h-1.5 w-14 rounded-full"

@@ -24,7 +24,7 @@ export default function KeystoneContactPage() {
       <KeystoneHeader />
       <main id="main">
         <header className="bg-black py-14 text-white md:py-18">
-          <div className="mx-auto max-w-3xl px-5">
+          <div className="reveal-down mx-auto max-w-3xl px-5">
             <p className="text-sm font-bold text-(--ks-green)">צור קשר</p>
             <h1 className="mt-2 text-3xl font-bold sm:text-4xl">
               כמה מס אתם משלמים בלי לדעת?{" "}

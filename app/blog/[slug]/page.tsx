@@ -89,7 +89,7 @@ export default async function KeystoneArticlePage({
       <main id="main">
         {/* ── Article header ─────────────────────────────────────────── */}
         <header className="bg-black py-14 text-white md:py-18">
-          <div className="mx-auto max-w-3xl px-5">
+          <div className="reveal-down mx-auto max-w-3xl px-5">
             <nav aria-label="פירורי לחם" className="text-sm">
               <Link
                 href="/blog"

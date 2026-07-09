@@ -60,7 +60,7 @@ export function SectionHead({
   dark?: boolean;
 }) {
   return (
-    <div className="text-center">
+    <div className="reveal text-center">
       <p
         className="text-sm font-bold"
         style={{ color: dark ? "var(--ks-green)" : "var(--ks-teal-ink)" }}
