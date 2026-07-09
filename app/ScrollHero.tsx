@@ -18,7 +18,8 @@ const frameSrc = (i: number) =>
 /* Each stage fades/rises in, holds, then fades out (except the last, which
    holds to the end). Windows are fractions of the pinned scroll progress. */
 const STAGES = [
-  { in: [0.0, 0.05], out: [0.16, 0.22] },
+  // Stage 1 (welcome) starts fully visible at the top — no scroll needed.
+  { in: [-0.06, 0.0], out: [0.16, 0.22] },
   { in: [0.2, 0.26], out: [0.34, 0.4] },
   { in: [0.38, 0.44], out: [0.52, 0.58] },
   { in: [0.56, 0.62], out: [0.7, 0.76] },
