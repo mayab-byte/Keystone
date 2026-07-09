@@ -233,10 +233,10 @@ export default function KeystonePage() {
       </section>
 
       {/* ── Numbers ────────────────────────────────────────────────────── */}
-      <section className="relative overflow-hidden bg-black py-16 text-white md:py-20">
+      <section className="relative overflow-hidden bg-white py-16 md:py-20">
         <span
           aria-hidden
-          className="pointer-events-none absolute inset-x-0 top-0 h-px bg-white/10"
+          className="pointer-events-none absolute inset-x-0 top-0 h-px bg-black/10"
         />
         <div className="mx-auto max-w-6xl px-5">
           <Counters items={stats} />
@@ -244,8 +244,17 @@ export default function KeystonePage() {
       </section>
 
       {/* ── Testimonials ───────────────────────────────────────────────── */}
-      <section className="mx-auto max-w-6xl px-5 py-20 md:py-24">
-        <SectionHead eyebrow="המלצות" title="הלקוחות שלנו מספרים" />
+      <section className="relative overflow-hidden py-20 md:py-24">
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img
+          src={`${BASE}/testimonials-bg.jpg`}
+          alt=""
+          aria-hidden
+          className="absolute inset-0 h-full w-full object-cover object-center"
+        />
+        <span aria-hidden className="absolute inset-0 bg-black/65" />
+        <div className="relative mx-auto max-w-6xl px-5">
+        <SectionHead eyebrow="המלצות" title="הלקוחות שלנו מספרים" dark />
         <div className="mt-12 grid gap-5 md:grid-cols-3">
           {testimonials.map(({ quote, name, detail }) => (
             <figure
@@ -265,6 +274,7 @@ export default function KeystonePage() {
               </figcaption>
             </figure>
           ))}
+        </div>
         </div>
       </section>
 

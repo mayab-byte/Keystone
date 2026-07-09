@@ -67,7 +67,9 @@ export function SectionHead({
       >
         {eyebrow}
       </p>
-      <h2 className="mt-2 text-3xl font-bold sm:text-4xl">{title}</h2>
+      <h2 className={`mt-2 text-3xl font-bold sm:text-4xl ${dark ? "text-white" : ""}`}>
+        {title}
+      </h2>
     </div>
   );
 }

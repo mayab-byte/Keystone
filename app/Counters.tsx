@@ -37,7 +37,7 @@ function CountUp({ value, prefix = "", suffix = "" }: Omit<CounterItem, "label">
           return;
         }
 
-        const duration = 1800;
+        const duration = 3200;
         const start = performance.now();
         const tick = (now: number) => {
           const t = Math.min((now - start) / duration, 1);
@@ -75,7 +75,7 @@ export default function Counters({ items }: { items: CounterItem[] }) {
               <CountUp value={value} prefix={prefix} suffix={suffix} />
             </span>
           </p>
-          <p className="mt-2 text-sm font-medium text-white/70">{label}</p>
+          <p className="mt-2 text-sm font-medium text-black/60">{label}</p>
         </div>
       ))}
     </div>
