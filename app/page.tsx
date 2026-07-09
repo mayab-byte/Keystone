@@ -14,6 +14,7 @@ import {
 import { WhatsappIcon } from "@/components/icons/social";
 import Counters from "./Counters";
 import ScrollHero from "./ScrollHero";
+import ServicesScroller from "./ServicesScroller";
 import LeadForm from "./LeadForm";
 import { articles } from "./articles";
 import { services } from "./services";
@@ -168,44 +169,18 @@ export default function KeystonePage() {
       </section>
 
       {/* ── Services ───────────────────────────────────────────────────── */}
-      <section
-        id="services"
-        className="scroll-mt-20 border-y border-black/5 bg-ground py-20 md:py-24"
-      >
+      <section id="services" className="scroll-mt-16 border-t border-black/5 bg-ground pt-20 md:pt-24">
         <div className="mx-auto max-w-6xl px-5">
           <SectionHead
             eyebrow="השירותים שלנו"
             title="ארבעה תחומים. תמונה אחת שלמה."
           />
           <p className="mt-4 text-center text-[15px] text-black/55">
-            <span className="hidden md:inline">גללו הצידה כדי לגלות את כל השירותים</span>
-            <span className="md:hidden">ארבעה תחומי הליווי שלנו</span>
+            גללו למטה — כל שירות מופיע במלואו, ואז ממשיכים באתר
           </p>
-          <div className="svc-rail mt-10">
-            {services.map(({ num, title, short, image, slug }) => (
-              <Link key={slug} href={`/services/${slug}`} className="svc-card" aria-label={title}>
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img src={`${BASE}${image}`} alt="" aria-hidden className="svc-bg" />
-                <span className="svc-scrim" aria-hidden />
-                <span className="svc-num">
-                  <span>{num}</span>
-                </span>
-                <div className="svc-body">
-                  <h3 className="text-2xl font-bold">{title}</h3>
-                  <p className="mt-2 max-w-[36ch] text-[14.5px] leading-relaxed text-white/90">
-                    {short}
-                  </p>
-                  <span className="svc-cta mt-4 inline-flex items-center gap-2 font-bold">
-                    קראו עוד
-                    <span className="svc-chip inline-flex h-8 w-8 items-center justify-center rounded-full bg-white/15 backdrop-blur">
-                      <ArrowLeft aria-hidden className="h-4 w-4" />
-                    </span>
-                  </span>
-                </div>
-                <span className="svc-accent" aria-hidden />
-              </Link>
-            ))}
-          </div>
+        </div>
+        <div className="mt-10">
+          <ServicesScroller services={services} />
         </div>
       </section>
 
