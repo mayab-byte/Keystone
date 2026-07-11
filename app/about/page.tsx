@@ -1,19 +1,54 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { Calculator, Handshake, ShieldCheck } from "lucide-react";
 import {
   BASE,
   brand,
   KeystoneFooter,
   KeystoneHeader,
+  SectionHead,
 } from "../shared";
 import { abs } from "../site";
 
 export const metadata: Metadata = {
   title: "אודות — Keystone · שלומי אחלופי ושלומי פרידמן",
   description:
-    "Keystone — סוכנות 360 של שלומי אחלופי ושלומי פרידמן. פיננסים, פנסיוני, פרישה וביטוח בליווי אישי, עם ניסיון מצטבר של 17 שנה.",
+    "הסיפור של Keystone — סוכנות 360 של שלומי אחלופי ושלומי פרידמן. פיננסים, פנסיוני, פרישה וביטוח תחת קורת גג אחת, בליווי אישי ועם ניסיון מצטבר של 17 שנה.",
   alternates: { canonical: abs("/about") },
 };
+
+const principles = [
+  {
+    Icon: ShieldCheck,
+    title: "שקיפות מלאה",
+    text: "כל המלצה מגיעה עם חישוב, לא עם הבטחה. אתם תמיד יודעים מה, למה, וכמה זה שווה לכם — בשקלים ולא בסיסמאות.",
+  },
+  {
+    Icon: Calculator,
+    title: "מספרים, לא ז׳רגון",
+    text: "אנחנו לא מוכרים תשואות מדומיינות. מציגים לכם את המצב האמיתי ואת האלטרנטיבות באופן ברור, ומשאירים לכם את ההחלטה.",
+  },
+  {
+    Icon: Handshake,
+    title: "ליווי אישי לאורך שנים",
+    text: "אתם מדברים איתנו, לא עם מוקד. הלקוחות שלנו נשארים כי יש להם מי שמסתכל על הכסף שלהם כל השנה — לא רק בפגישה הראשונה.",
+  },
+];
+
+const founders = [
+  {
+    name: "שלומי אחלופי",
+    role: "שותף מייסד · פיננסים והשקעות",
+    img: "/founder-achlufi.jpg",
+    bio: "כלכלן בהשכלתו — תואר בכלכלה ובמנהל עסקים. עשור בחטיבה לחיסכון ארוך טווח בחברת כלל ביטוח, שם ליווה תיקי השקעות של אלפי חוסכים, וכיום מנהל כ-150 מיליון ₪ עבור לקוחות Keystone. מאמין שכל שקל צריך לעבוד חכם, ושכל החלטה פיננסית מתחילה בשאלה אחת: כמה מס אני משלם על זה? הסגנון שלו — ישיר, מבוסס נתונים, בלי ז׳רגון.",
+  },
+  {
+    name: "שלומי פרידמן",
+    role: "שותף מייסד · ביטוח",
+    img: "/founder-fridman.jpg",
+    bio: "מומחה לתכנון תיקי ביטוח עם שנים של ניסיון בבריאות, חיים ואובדן כושר עבודה. ליווה מאות משפחות בבניית מעטפת ביטוחית מדויקת — בלי כפילויות שמנפחות את הפרמיה, ובלי חורים שמתגלים ברגע הכי לא נכון. מאמין שביטוח טוב הוא שקט נפשי, לא עוד הוצאה חודשית שאף אחד לא מבין למה הוא משלם עליה.",
+  },
+];
 
 export default function KeystoneAboutPage() {
   return (
@@ -26,11 +61,16 @@ export default function KeystoneAboutPage() {
             <h1 className="mt-2 text-3xl font-bold sm:text-4xl">
               שני שלומי. שתי מומחיות. דרך אחת.
             </h1>
+            <p className="mt-4 max-w-2xl text-lg text-white/75">
+              סוכנות 360 שמחברת בין העולם הפיננסי לעולם הביטוח — כדי שתראו את
+              התמונה המלאה של הכסף שלכם במקום אחד.
+            </p>
           </div>
         </header>
 
-        <section className="mx-auto max-w-6xl px-5 py-16 md:py-20">
-          <div className="mx-auto grid max-w-5xl items-center gap-10 md:grid-cols-[1fr_1.05fr]">
+        {/* ── Our story ─────────────────────────────────────────────────── */}
+        <section className="mx-auto max-w-5xl px-5 py-16 md:py-20">
+          <div className="grid items-center gap-10 md:grid-cols-[1fr_1.05fr]">
             <figure>
               <div className="relative overflow-hidden rounded-3xl shadow-lift">
                 {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -45,59 +85,99 @@ export default function KeystoneAboutPage() {
                   style={{ backgroundImage: "var(--ks-grad)" }}
                 />
               </div>
-              <figcaption className="mt-3 text-center text-sm text-black/65">
-                שלומי אחלופי ושלומי פרידמן — שתי מומחיות, תמונה אחת
-              </figcaption>
             </figure>
-            <p className="text-lg leading-relaxed text-black/70">
-              Keystone היא סוכנות 360 שהקמנו יחד — שלומי אחלופי בצד הפיננסי
-              ושלומי פרידמן בצד הביטוחי. עם ניסיון מצטבר של 17 שנה ומאות משפחות
-              שאנחנו מלווים, אנחנו מאמינים בדבר אחד פשוט: להסתכל על התמונה
-              המלאה של הכסף שלכם — ולהגיד לכם את האמת, במספרים.
+            <div>
+              <h2 className="text-2xl font-bold sm:text-3xl">הסיפור שלנו</h2>
+              <p className="mt-4 leading-relaxed text-black/70">
+                Keystone נולדה מתוך תסכול פשוט: ראינו יותר מדי משפחות שמשלמות מס
+                מיותר, מחזיקות בביטוחים כפולים, ומקבלות המלצות שמתאימות למי
+                שממליץ — לא להן. שני שלומי, כל אחד מהתחום שלו, החליטו לעשות את זה
+                אחרת.
+              </p>
+              <p className="mt-4 leading-relaxed text-black/70">
+                אחרי שנים בתעשייה — אחד בעולם הפיננסי והשני בעולם הביטוח — הבנו
+                שהערך האמיתי נמצא דווקא בחיבור בין השניים. לקוח לא צריך יועץ
+                פיננסי וסוכן ביטוח שלא מדברים זה עם זה; הוא צריך תמונה אחת שלמה.
+                זו בדיוק סוכנות 360 שבנינו — 17 שנות ניסיון מצטבר, ומאות משפחות
+                שאנחנו מלווים לאורך זמן.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        {/* ── Principles ────────────────────────────────────────────────── */}
+        <section className="border-y border-black/5 bg-ground py-16 md:py-20">
+          <div className="mx-auto max-w-6xl px-5">
+            <SectionHead
+              eyebrow="העקרונות שלנו"
+              title="מה שמנחה אותנו בכל החלטה"
+            />
+            <div className="mt-12 grid gap-6 sm:grid-cols-3">
+              {principles.map(({ Icon, title, text }) => (
+                <article
+                  key={title}
+                  className="rounded-2xl border border-black/8 bg-white p-7 shadow-soft"
+                >
+                  <span
+                    className="inline-flex h-12 w-12 items-center justify-center rounded-xl text-white"
+                    style={{ backgroundImage: "var(--ks-grad)" }}
+                  >
+                    <Icon className="h-6 w-6" />
+                  </span>
+                  <h3 className="mt-5 text-xl font-bold">{title}</h3>
+                  <p className="mt-2 text-[15px] leading-relaxed text-black/60">
+                    {text}
+                  </p>
+                </article>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* ── Founders ──────────────────────────────────────────────────── */}
+        <section className="mx-auto max-w-5xl px-5 py-16 md:py-20">
+          <SectionHead eyebrow="שני שלומי" title="מי עומד מאחורי Keystone" />
+          <div className="mt-12 grid gap-6 md:grid-cols-2">
+            {founders.map((f) => (
+              <article
+                key={f.name}
+                className="overflow-hidden rounded-3xl border border-black/8 bg-white shadow-soft"
+              >
+                <div className="relative aspect-[4/3] overflow-hidden bg-black/5">
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img
+                    src={`${BASE}${f.img}`}
+                    alt={f.name}
+                    className="h-full w-full object-cover object-top"
+                  />
+                </div>
+                <div className="p-7">
+                  <h3 className="text-2xl font-bold">{f.name}</h3>
+                  <p className="mt-1 text-sm font-semibold text-(--ks-teal-ink)">
+                    {f.role}
+                  </p>
+                  <p className="mt-3 text-[15px] leading-relaxed text-black/65">
+                    {f.bio}
+                  </p>
+                </div>
+              </article>
+            ))}
+          </div>
+        </section>
+
+        {/* ── Closing + CTA ─────────────────────────────────────────────── */}
+        <section className="bg-black py-16 text-white md:py-20">
+          <div className="mx-auto max-w-3xl px-5 text-center">
+            <h2 className="text-2xl font-bold sm:text-3xl">
+              הכל מתחבר — תחת קורת גג אחת
+            </h2>
+            <p className="mx-auto mt-4 max-w-xl leading-relaxed text-white/75">
+              פיננסים וביטוח, ראייה אחת שלמה על התמונה שלכם. בואו נתחיל בשיחת
+              היכרות ללא עלות — ונראה לכם בדיוק איפה אתם עומדים ומה אפשר לשפר.
             </p>
-          </div>
-
-          <div className="mx-auto mt-12 grid max-w-4xl gap-6 sm:grid-cols-2">
-            <article className="rounded-2xl border border-black/8 bg-white p-8 shadow-soft">
-              <span
-                className="flex h-14 w-14 items-center justify-center rounded-full text-2xl font-bold text-black"
-                style={{ backgroundImage: "var(--ks-grad)" }}
-              >
-                ש
-              </span>
-              <h2 className="mt-5 text-2xl font-bold">שלומי אחלופי</h2>
-              <p className="mt-1 text-sm font-semibold text-(--ks-teal-ink)">
-                שותף מייסד · פיננסים והשקעות
-              </p>
-              <p className="mt-3 text-[15px] leading-relaxed text-black/60">
-                כלכלן בהשכלתו — תואר בכלכלה ומנהל עסקים. עשור בחטיבה לחיסכון ארוך
-                טווח בכלל ביטוח, וכיום מנהל כ-150 מיליון ₪ עבור לקוחותיו. הסגנון:
-                ישיר, מספרים קונקרטיים, בלי ז&apos;רגון.
-              </p>
-            </article>
-            <article className="rounded-2xl border border-black/8 bg-white p-8 shadow-soft">
-              <span
-                className="flex h-14 w-14 items-center justify-center rounded-full text-2xl font-bold text-black"
-                style={{ backgroundImage: "var(--ks-grad)" }}
-              >
-                ש
-              </span>
-              <h2 className="mt-5 text-2xl font-bold">שלומי פרידמן</h2>
-              <p className="mt-1 text-sm font-semibold text-(--ks-teal-ink)">
-                שותף מייסד · ביטוח
-              </p>
-              <p className="mt-3 text-[15px] leading-relaxed text-black/60">
-                מומחה לתכנון תיקי ביטוח — בריאות, חיים ואובדן כושר עבודה. דואג
-                שהכיסוי שלכם יתאים בדיוק לחיים שלכם: בלי כפילויות מיותרות ובלי
-                חורים שמתגלים ברגע הלא נכון.
-              </p>
-            </article>
-          </div>
-
-          <div className="mt-14 text-center">
             <Link
               href="/contact"
-              className="inline-flex items-center gap-2 rounded-full px-7 py-3.5 font-bold text-black shadow-lift transition-transform hover:-translate-y-0.5"
+              className="mt-8 inline-flex items-center gap-2 rounded-full px-7 py-3.5 font-bold text-black shadow-lift transition-transform hover:-translate-y-0.5"
               style={{ backgroundImage: "var(--ks-grad)" }}
             >
               דברו איתנו
