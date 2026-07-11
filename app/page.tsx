@@ -16,6 +16,7 @@ import ScrollHero from "./ScrollHero";
 import ServicesScroller from "./ServicesScroller";
 import LeadForm from "./LeadForm";
 import Marquee from "./Marquee";
+import ClientLogos from "./ClientLogos";
 import { articles } from "./articles";
 import { services } from "./services";
 import { abs } from "./site";
@@ -227,40 +228,52 @@ export default function KeystonePage() {
         </div>
       </section>
 
-      {/* ── Testimonials ───────────────────────────────────────────────── */}
-      <section className="relative overflow-hidden py-20 md:py-24">
-        {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img
-          src={`${BASE}/testimonials-bg.jpg`}
-          alt=""
-          aria-hidden
-          className="absolute inset-0 h-full w-full object-cover object-center"
-        />
-        <span aria-hidden className="absolute inset-0 bg-black/65" />
-        <div className="relative mx-auto max-w-6xl px-5">
-        <SectionHead eyebrow="המלצות" title="הלקוחות שלנו מספרים" dark />
-        <div className="mt-12 grid gap-5 md:grid-cols-3">
-          {testimonials.map(({ quote, name, detail }) => (
-            <figure
-              key={name + detail}
-              className="flex flex-col rounded-2xl border border-black/8 bg-white p-7 shadow-soft"
-            >
-              <Quote
-                aria-hidden
-                className="h-7 w-7 -scale-x-100 text-(--ks-teal)"
-              />
-              <blockquote className="mt-4 flex-1 text-[15px] leading-relaxed text-black/75">
-                {quote}
-              </blockquote>
-              <figcaption className="mt-5 border-t border-black/5 pt-4">
-                <p className="font-bold">{name}</p>
-                <p className="text-sm text-black/65">{detail}</p>
-              </figcaption>
-            </figure>
-          ))}
-        </div>
+      {/* ── Testimonials — split: photo (right) + quotes (left) ────────── */}
+      <section id="testimonials" className="overflow-hidden bg-ground">
+        <div className="grid md:grid-cols-2">
+          {/* Photo — right side in RTL (top on mobile) */}
+          <div className="relative min-h-[300px] md:order-1 md:min-h-full">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src={`${BASE}/testimonials-bg.jpg`}
+              alt="משפחה נהנית יחד — לקוחות Keystone"
+              className="absolute inset-0 h-full w-full object-cover object-center"
+            />
+          </div>
+          {/* Quotes — left side in RTL */}
+          <div className="px-6 py-16 md:order-2 md:px-12 md:py-20">
+            <div className="reveal">
+              <p className="text-sm font-bold text-(--ks-teal-ink)">המלצות</p>
+              <h2 className="mt-2 text-3xl font-bold sm:text-4xl">
+                הלקוחות שלנו מספרים
+              </h2>
+            </div>
+            <div className="mt-8 space-y-6">
+              {testimonials.map(({ quote, name, detail }) => (
+                <figure
+                  key={name + detail}
+                  className="border-t border-black/10 pt-6 first:border-t-0 first:pt-0"
+                >
+                  <Quote
+                    aria-hidden
+                    className="h-6 w-6 -scale-x-100 text-(--ks-teal)"
+                  />
+                  <blockquote className="mt-3 text-[15px] leading-relaxed text-black/80">
+                    {quote}
+                  </blockquote>
+                  <figcaption className="mt-3">
+                    <p className="font-bold">{name}</p>
+                    <p className="text-sm text-black/60">{detail}</p>
+                  </figcaption>
+                </figure>
+              ))}
+            </div>
+          </div>
         </div>
       </section>
+
+      {/* ── Clients / institutions ────────────────────────────────────── */}
+      <ClientLogos />
 
       {/* ── Blog ───────────────────────────────────────────────────────── */}
       <section className="border-t border-black/5 bg-ground py-20 md:py-24">

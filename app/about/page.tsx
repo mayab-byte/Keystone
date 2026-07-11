@@ -9,6 +9,7 @@ import {
   SectionHead,
 } from "../shared";
 import { abs } from "../site";
+import ClientLogos from "../ClientLogos";
 
 export const metadata: Metadata = {
   title: "אודות — Keystone · שלומי אחלופי ושלומי פרידמן",
@@ -164,6 +165,9 @@ export default function KeystoneAboutPage() {
             ))}
           </div>
         </section>
+
+        {/* ── Clients / institutions ───────────────────────────────────── */}
+        <ClientLogos />
 
         {/* ── Closing + CTA ─────────────────────────────────────────────── */}
         <section className="bg-black py-16 text-white md:py-20">
