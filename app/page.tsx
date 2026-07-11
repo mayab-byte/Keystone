@@ -1,6 +1,5 @@
 import Link from "next/link";
 import type { Metadata } from "next";
-import Image from "next/image";
 import {
   ArrowLeft,
   BadgePercent,
@@ -103,68 +102,52 @@ export default function KeystonePage() {
         className="mx-auto max-w-6xl scroll-mt-20 px-5 py-20 md:py-24"
       >
         <SectionHead eyebrow="קצת עלינו" title="שני שלומי. שתי מומחיות. דרך אחת." />
-        <div className="mx-auto mt-12 grid max-w-5xl items-center gap-10 md:grid-cols-[1fr_1.05fr]">
-          <figure>
-            <div className="relative overflow-hidden rounded-3xl shadow-lift">
-              <Image
-                src={`${BASE}/founders.webp`}
-                alt="שלומי אחלופי ושלומי פרידמן — מייסדי Keystone"
-                width={2000}
-                height={1418}
-                sizes="(min-width: 768px) 30rem, 90vw"
-                className="h-auto w-full"
-              />
-              <span
-                aria-hidden
-                className="absolute inset-x-0 bottom-0 h-1.5"
-                style={{ backgroundImage: "var(--ks-grad)" }}
-              />
+        <p className="mx-auto mt-6 max-w-3xl text-center text-lg leading-relaxed text-black/70">
+          Keystone היא סוכנות 360 שהקמנו יחד — שלומי אחלופי בצד הפיננסי
+          ושלומי פרידמן בצד הביטוחי. עם ניסיון מצטבר של 17 שנה ומאות משפחות
+          שאנחנו מלווים, אנחנו מאמינים בדבר אחד פשוט: להסתכל על התמונה
+          המלאה של הכסף שלכם — ולהגיד לכם את האמת, במספרים.
+        </p>
+
+        <div className="mx-auto mt-12 grid max-w-4xl gap-5 sm:grid-cols-2 lg:grid-cols-4">
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src={`${BASE}/founder-achlufi.jpg`}
+            alt="שלומי אחלופי"
+            className="aspect-[4/5] w-full rounded-2xl object-cover shadow-soft"
+          />
+          <article className="flex flex-col justify-center rounded-2xl border border-black/8 bg-white p-7 shadow-soft">
+            <Quote aria-hidden className="h-6 w-6 -scale-x-100 text-(--ks-teal)" />
+            <p className="mt-3 text-[15px] leading-relaxed text-black/75">
+              אנחנו שואלים קודם כמה מס אתם משלמים על מה שיש לכם עכשיו — ואז
+              בונים את התיק סביב התשובה.
+            </p>
+            <div className="mt-5 border-t border-black/5 pt-4">
+              <p className="font-bold">שלומי אחלופי</p>
+              <p className="text-sm font-semibold text-(--ks-teal-ink)">
+                שותף מייסד · פיננסים והשקעות
+              </p>
             </div>
-            <figcaption className="mt-3 text-center text-sm text-black/65">
-              שלומי אחלופי ושלומי פרידמן — שתי מומחיות, תמונה אחת
-            </figcaption>
-          </figure>
-          <p className="text-lg leading-relaxed text-black/70">
-            Keystone היא סוכנות 360 שהקמנו יחד — שלומי אחלופי בצד הפיננסי
-            ושלומי פרידמן בצד הביטוחי. עם ניסיון מצטבר של 17 שנה ומאות משפחות
-            שאנחנו מלווים, אנחנו מאמינים בדבר אחד פשוט: להסתכל על התמונה
-            המלאה של הכסף שלכם — ולהגיד לכם את האמת, במספרים.
-          </p>
-        </div>
-        <div className="mx-auto mt-12 grid max-w-4xl gap-6 sm:grid-cols-2">
-          <article className="rounded-2xl border border-black/8 bg-white p-8 shadow-soft">
-            <span
-              className="flex h-14 w-14 items-center justify-center rounded-full text-2xl font-bold text-black"
-              style={{ backgroundImage: "var(--ks-grad)" }}
-            >
-              ש
-            </span>
-            <h3 className="mt-5 text-2xl font-bold">שלומי אחלופי</h3>
-            <p className="mt-1 text-sm font-semibold text-(--ks-teal-ink)">
-              שותף מייסד · פיננסים והשקעות
-            </p>
-            <p className="mt-3 text-[15px] leading-relaxed text-black/60">
-              כלכלן בהשכלתו — תואר בכלכלה ומנהל עסקים. עשור בחטיבה לחיסכון ארוך
-              טווח בכלל ביטוח, וכיום מנהל כ-150 מיליון ₪ עבור לקוחותיו. הסגנון:
-              ישיר, מספרים קונקרטיים, בלי ז&apos;רגון.
-            </p>
           </article>
-          <article className="rounded-2xl border border-black/8 bg-white p-8 shadow-soft">
-            <span
-              className="flex h-14 w-14 items-center justify-center rounded-full text-2xl font-bold text-black"
-              style={{ backgroundImage: "var(--ks-grad)" }}
-            >
-              ש
-            </span>
-            <h3 className="mt-5 text-2xl font-bold">שלומי פרידמן</h3>
-            <p className="mt-1 text-sm font-semibold text-(--ks-teal-ink)">
-              שותף מייסד · ביטוח
+
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src={`${BASE}/founder-fridman.jpg`}
+            alt="שלומי פרידמן"
+            className="aspect-[4/5] w-full rounded-2xl object-cover shadow-soft"
+          />
+          <article className="flex flex-col justify-center rounded-2xl border border-black/8 bg-white p-7 shadow-soft">
+            <Quote aria-hidden className="h-6 w-6 -scale-x-100 text-(--ks-teal)" />
+            <p className="mt-3 text-[15px] leading-relaxed text-black/75">
+              התפקיד שלי הוא לוודא שאין לכם חורים בכיסוי, ושאתם לא משלמים
+              כפול על שום דבר.
             </p>
-            <p className="mt-3 text-[15px] leading-relaxed text-black/60">
-              מומחה לתכנון תיקי ביטוח — בריאות, חיים ואובדן כושר עבודה. דואג
-              שהכיסוי שלכם יתאים בדיוק לחיים שלכם: בלי כפילויות מיותרות ובלי
-              חורים שמתגלים ברגע הלא נכון.
-            </p>
+            <div className="mt-5 border-t border-black/5 pt-4">
+              <p className="font-bold">שלומי פרידמן</p>
+              <p className="text-sm font-semibold text-(--ks-teal-ink)">
+                שותף מייסד · ביטוח
+              </p>
+            </div>
           </article>
         </div>
       </section>
