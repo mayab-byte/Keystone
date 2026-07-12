@@ -330,7 +330,7 @@ export default function KeystonePage() {
               href="/blog"
               className="inline-flex items-center gap-2 rounded-full border-2 border-black px-7 py-3 font-semibold transition-colors hover:bg-black hover:text-white"
             >
-              לכל המאמרים בבלוג
+              לכל המאמרים
               <ArrowLeft aria-hidden className="h-4 w-4" />
             </Link>
           </p>
@@ -355,7 +355,7 @@ export default function KeystonePage() {
           src={`${BASE}/keystone-mark.png`}
           alt=""
           aria-hidden
-          className="pointer-events-none absolute -bottom-20 left-[-4rem] w-[38rem] max-w-[75%] opacity-[0.07]"
+          className="pointer-events-none absolute -bottom-20 left-[-4rem] w-[38rem] max-w-[75%] opacity-[0.04]"
         />
         <div className="relative mx-auto grid max-w-5xl items-start gap-12 px-5 md:grid-cols-2">
           <div>

@@ -179,9 +179,9 @@ export default function ScrollHero() {
             <p className="text-lg font-semibold text-white/85">ברוכים הבאים ל-</p>
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
-              src={`${BASE}/keystone-mark.png`}
+              src={`${BASE}/logo-full.png`}
               alt="Keystone"
-              className="mx-auto mt-4 h-24 w-auto drop-shadow-[0_4px_24px_rgba(0,0,0,0.45)] sm:h-32"
+              className="mx-auto mt-4 h-24 w-auto drop-shadow-[0_4px_24px_rgba(0,0,0,0.45)] sm:h-28"
             />
             <p className="mt-5 text-white/80">
               פיננסים · פנסיוני · פרישה · ביטוח

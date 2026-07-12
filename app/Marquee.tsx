@@ -9,7 +9,6 @@ const WORDS = [
   "Retirement",
   "Insurance",
   "Financial Freedom",
-  "Smart Portfolios",
   "Family Wealth",
   "Long-Term Growth",
 ];
