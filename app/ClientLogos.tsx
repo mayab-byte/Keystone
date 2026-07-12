@@ -9,6 +9,11 @@ const LOGOS = [
   { name: "מזרחי טפחות", src: "/logos/mizrahi.jpg" },
   { name: "קבוצת מגדל", src: "/logos/migdal.jpg" },
   { name: "אנליסט", src: "/logos/analyst.jpg" },
+  { name: "הראל ביטוח ופיננסים", src: "/logos/harel.jpg" },
+  { name: "מור בית השקעות", src: "/logos/more.jpg" },
+  { name: "כלל", src: "/logos/clal.jpg" },
+  { name: "מנורה מבטחים", src: "/logos/menora.jpg" },
+  { name: "הכשרה חברה לביטוח", src: "/logos/hachshara.jpg" },
 ];
 
 export default function ClientLogos() {
