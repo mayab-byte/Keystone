@@ -137,8 +137,9 @@ body {
 .logos-track {
   display: inline-flex;
   align-items: center;
-  gap: 3.5rem;
-  padding-inline: 1.75rem;
+  /* Spacing lives on each logo (margin-inline) rather than gap/padding here,
+     so it stays uniform across the -50% loop seam — no half-gap or empty
+     stretch when the last logo wraps back to the first. */
   animation: ksMarquee 55s linear infinite;
   will-change: transform;
 }

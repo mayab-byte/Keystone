@@ -43,7 +43,7 @@ export default function ClientLogos() {
               src={`${BASE}${l.src}`}
               alt={i < LOGOS.length ? l.name : ""}
               aria-hidden={i >= LOGOS.length}
-              className="h-12 w-auto shrink-0 object-contain opacity-80 grayscale transition duration-300 hover:opacity-100 hover:grayscale-0 md:h-14"
+              className="mx-7 h-12 w-auto shrink-0 object-contain opacity-80 grayscale transition duration-300 hover:opacity-100 hover:grayscale-0 md:h-14"
             />
           ))}
         </div>
