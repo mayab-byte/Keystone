@@ -112,12 +112,12 @@ export default function ServicesScroller({ services }: { services: Service[] }) 
               href={`/services/${s.slug}`}
               dir="rtl"
               aria-label={s.title}
-              className="group flex h-full w-screen flex-none items-center justify-center px-[3vw]"
+              className="group flex h-full w-screen flex-none items-center justify-center px-[1vw]"
             >
               {/* 3:2 card — matches the images' native ratio, so the full photo
                   shows with no cropping, and the surrounding black gives clear
                   separation between one service and the next. */}
-              <div className="relative aspect-[3/2] max-h-[80vh] w-[min(90vw,120vh)] flex-none items-end overflow-hidden rounded-[2rem] text-white shadow-2xl ring-1 ring-white/10">
+              <div className="relative aspect-[3/2] max-h-[90vh] w-[min(97vw,142vh)] flex-none items-end overflow-hidden rounded-[2rem] text-white shadow-2xl ring-1 ring-white/10">
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
                   src={`${BASE}${s.image}`}
