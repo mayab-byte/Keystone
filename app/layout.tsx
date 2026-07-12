@@ -3,6 +3,7 @@ import { Assistant } from "next/font/google";
 import "./globals.css";
 import { abs, ogImage, organizationLd, site, websiteLd } from "./site";
 import ScrollReveal from "./ScrollReveal";
+import PageTransition from "./PageTransition";
 
 const assistant = Assistant({
   subsets: ["hebrew", "latin"],
@@ -56,7 +57,7 @@ export default function RootLayout({
       </head>
       <body className="min-h-full">
         <ScrollReveal />
-        {children}
+        <PageTransition>{children}</PageTransition>
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationLd()) }}

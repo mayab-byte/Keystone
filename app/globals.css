@@ -60,6 +60,13 @@ body {
   from { opacity: 0; transform: translateY(20px); }
   to { opacity: 1; transform: none; }
 }
+/* Whole-page gentle fade on load / navigation (opacity only) */
+@keyframes ksPageEnter {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+.page-enter { animation: ksPageEnter 0.5s var(--ks-ease) both; }
+
 .reveal-down { animation: ksInDown 0.7s var(--ks-ease) both; }
 .reveal-up { animation: ksInUp 0.7s var(--ks-ease) both; }
 .reveal-d1 { animation-delay: 0.1s; }

@@ -177,13 +177,13 @@ export default function ScrollHero() {
           {/* 1 — welcome */}
           <div className={reducedMotion ? "" : stageCls} style={style(0)}>
             <p className="text-lg font-semibold text-white/85">ברוכים הבאים ל-</p>
-            <p
-              className="mt-2 text-6xl font-bold tracking-tight sm:text-7xl"
-              style={{ fontFamily: enSerif }}
-            >
-              <GradientText>Keystone</GradientText>
-            </p>
-            <p className="mt-4 text-white/80">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src={`${BASE}/keystone-mark.png`}
+              alt="Keystone"
+              className="mx-auto mt-4 h-24 w-auto drop-shadow-[0_4px_24px_rgba(0,0,0,0.45)] sm:h-32"
+            />
+            <p className="mt-5 text-white/80">
               פיננסים · פנסיוני · פרישה · ביטוח
             </p>
           </div>

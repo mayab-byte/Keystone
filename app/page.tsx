@@ -349,6 +349,14 @@ export default function KeystonePage() {
           className="pointer-events-none absolute inset-x-0 top-0 h-1"
           style={{ backgroundImage: "var(--ks-grad)" }}
         />
+        {/* Brand K watermark behind the form */}
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img
+          src={`${BASE}/keystone-mark.png`}
+          alt=""
+          aria-hidden
+          className="pointer-events-none absolute -bottom-20 left-[-4rem] w-[38rem] max-w-[75%] opacity-[0.07]"
+        />
         <div className="relative mx-auto grid max-w-5xl items-start gap-12 px-5 md:grid-cols-2">
           <div>
             <h2 className="text-3xl font-bold sm:text-4xl">
