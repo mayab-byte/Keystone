@@ -355,7 +355,7 @@ export default function KeystonePage() {
           src={`${BASE}/keystone-mark.png`}
           alt=""
           aria-hidden
-          className="pointer-events-none absolute -bottom-20 left-[-4rem] w-[38rem] max-w-[75%] opacity-[0.04]"
+          className="pointer-events-none absolute -bottom-20 left-[-4rem] w-[38rem] max-w-[75%] opacity-[0.4]"
         />
         <div className="relative mx-auto grid max-w-5xl items-start gap-12 px-5 md:grid-cols-2">
           <div>

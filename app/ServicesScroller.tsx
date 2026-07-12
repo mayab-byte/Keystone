@@ -112,46 +112,51 @@ export default function ServicesScroller({ services }: { services: Service[] }) 
               href={`/services/${s.slug}`}
               dir="rtl"
               aria-label={s.title}
-              className="group relative flex h-full w-screen flex-none items-end overflow-hidden text-white"
+              className="group flex h-full w-screen flex-none items-center justify-center px-[3vw]"
             >
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img
-                src={`${BASE}${s.image}`}
-                alt=""
-                aria-hidden
-                className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
-              />
-              <span
-                aria-hidden
-                className="absolute inset-0"
-                style={{
-                  background:
-                    "linear-gradient(to top, rgba(4,20,28,0.9) 0%, rgba(4,20,28,0.5) 45%, rgba(4,20,28,0.2) 100%)",
-                }}
-              />
-              <span className="svc-num" style={{ top: 28 }}>
-                <span>{s.num}</span>
-              </span>
-              <div className="relative z-10 mx-auto w-full max-w-5xl px-6 pb-24 md:pb-28">
+              {/* 3:2 card — matches the images' native ratio, so the full photo
+                  shows with no cropping, and the surrounding black gives clear
+                  separation between one service and the next. */}
+              <div className="relative aspect-[3/2] max-h-[80vh] w-[min(90vw,120vh)] flex-none items-end overflow-hidden rounded-[2rem] text-white shadow-2xl ring-1 ring-white/10">
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src={`${BASE}${s.image}`}
+                  alt=""
+                  aria-hidden
+                  className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
+                />
                 <span
                   aria-hidden
-                  className="block h-1.5 w-14 rounded-full"
-                  style={{ backgroundImage: "var(--ks-grad)" }}
+                  className="absolute inset-0"
+                  style={{
+                    background:
+                      "linear-gradient(to top, rgba(4,20,28,0.92) 0%, rgba(4,20,28,0.5) 45%, rgba(4,20,28,0.12) 100%)",
+                  }}
                 />
-                <h3 className="mt-5 text-4xl font-bold sm:text-5xl md:text-6xl">
-                  {s.title}
-                </h3>
-                <p className="mt-4 max-w-xl text-lg leading-relaxed text-white/90">
-                  {s.short}
-                </p>
-                <span className="mt-7 inline-flex items-center gap-3 text-lg font-bold">
-                  קראו עוד
-                  <span className="inline-flex h-11 w-11 items-center justify-center rounded-full bg-white/15 backdrop-blur transition-all group-hover:-translate-x-1 group-hover:[background-image:var(--ks-grad)] group-hover:text-black">
-                    <ArrowLeft aria-hidden className="h-5 w-5" />
-                  </span>
+                <span className="svc-num" style={{ top: 24 }}>
+                  <span>{s.num}</span>
                 </span>
+                <div className="absolute inset-x-0 bottom-0 z-10 p-7 md:p-10">
+                  <span
+                    aria-hidden
+                    className="block h-1.5 w-14 rounded-full"
+                    style={{ backgroundImage: "var(--ks-grad)" }}
+                  />
+                  <h3 className="mt-4 text-3xl font-bold sm:text-4xl md:text-5xl">
+                    {s.title}
+                  </h3>
+                  <p className="mt-3 max-w-xl text-base leading-relaxed text-white/90 md:text-lg">
+                    {s.short}
+                  </p>
+                  <span className="mt-6 inline-flex items-center gap-3 text-lg font-bold">
+                    קראו עוד
+                    <span className="inline-flex h-11 w-11 items-center justify-center rounded-full bg-white/15 backdrop-blur transition-all group-hover:-translate-x-1 group-hover:[background-image:var(--ks-grad)] group-hover:text-black">
+                      <ArrowLeft aria-hidden className="h-5 w-5" />
+                    </span>
+                  </span>
+                </div>
+                <span className="svc-accent" aria-hidden />
               </div>
-              <span className="svc-accent" aria-hidden />
             </Link>
           ))}
         </div>

@@ -18,7 +18,10 @@ const LOGOS = [
 ];
 
 export default function ClientLogos() {
-  const items = [...LOGOS, ...LOGOS];
+  // Repeat the set enough times that a half-track (-50% loop point) is always
+  // wider than the viewport — otherwise the strip appears to "start from the
+  // middle" with empty gaps sweeping across. 4 copies → 2 copies per half.
+  const items = [...LOGOS, ...LOGOS, ...LOGOS, ...LOGOS];
   return (
     <section className="border-y border-black/5 bg-white py-14 md:py-16">
       <div className="mx-auto max-w-6xl px-5 text-center">
