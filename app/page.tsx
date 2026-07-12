@@ -100,7 +100,7 @@ export default function KeystonePage() {
       {/* ── About ──────────────────────────────────────────────────────── */}
       <section
         id="about"
-        className="mx-auto max-w-6xl scroll-mt-20 px-5 py-20 md:py-24"
+        className="mx-auto max-w-7xl scroll-mt-20 px-5 py-20 md:py-24"
       >
         <SectionHead eyebrow="קצת עלינו" title="שני שלומי. שתי מומחיות. דרך אחת." />
         <p className="mx-auto mt-6 max-w-3xl text-center text-lg leading-relaxed text-black/70">
@@ -110,14 +110,14 @@ export default function KeystonePage() {
           המלאה של הכסף שלכם — ולהגיד לכם את האמת, במספרים.
         </p>
 
-        <div className="mx-auto mt-12 grid max-w-4xl gap-5 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
             src={`${BASE}/founder-achlufi.jpg`}
             alt="שלומי אחלופי"
-            className="aspect-[4/5] w-full rounded-2xl object-cover shadow-soft"
+            className="h-80 w-full rounded-2xl object-cover object-top shadow-soft"
           />
-          <article className="flex flex-col justify-center rounded-2xl border border-black/8 bg-white p-7 shadow-soft">
+          <article className="flex h-80 flex-col justify-center rounded-2xl border border-black/8 bg-white p-7 shadow-soft">
             <Quote aria-hidden className="h-6 w-6 -scale-x-100 text-(--ks-teal)" />
             <p className="mt-3 text-[15px] leading-relaxed text-black/75">
               אנחנו שואלים קודם כמה מס אתם משלמים על מה שיש לכם עכשיו — ואז
@@ -135,9 +135,9 @@ export default function KeystonePage() {
           <img
             src={`${BASE}/founder-fridman.jpg`}
             alt="שלומי פרידמן"
-            className="aspect-[4/5] w-full rounded-2xl object-cover shadow-soft"
+            className="h-80 w-full rounded-2xl object-cover object-top shadow-soft"
           />
-          <article className="flex flex-col justify-center rounded-2xl border border-black/8 bg-white p-7 shadow-soft">
+          <article className="flex h-80 flex-col justify-center rounded-2xl border border-black/8 bg-white p-7 shadow-soft">
             <Quote aria-hidden className="h-6 w-6 -scale-x-100 text-(--ks-teal)" />
             <p className="mt-3 text-[15px] leading-relaxed text-black/75">
               התפקיד שלי הוא לוודא שאין לכם חורים בכיסוי, ושאתם לא משלמים

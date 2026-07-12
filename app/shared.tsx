@@ -3,6 +3,7 @@ import type { CSSProperties } from "react";
 import { Phone } from "lucide-react";
 import { WhatsappIcon } from "@/components/icons/social";
 import { contact } from "./site";
+import ServicesNav from "./ServicesNav";
 
 /* Keystone brand palette (from the client's brand book):
    gray #d9d9d9 · black #000000 · purple #5e17eb · teal #0097b2 ·
@@ -113,9 +114,7 @@ export function KeystoneHeader() {
             <Link href="/about" className="hover:text-(--ks-green)">
               אודות
             </Link>
-            <Link href="/#services" className="hover:text-(--ks-green)">
-              שירותים
-            </Link>
+            <ServicesNav />
             <Link href="/blog" className="hover:text-(--ks-green)">
               בלוג
             </Link>
@@ -141,7 +140,7 @@ export function KeystoneFooter() {
     <>
       <footer className="border-t border-white/10 bg-black pb-10 pt-8 text-white">
         <div className="mx-auto flex max-w-6xl flex-col items-center gap-4 px-5 text-center">
-          <Wordmark className="h-12" />
+          <Wordmark className="h-20" />
           <nav aria-label="קישורי ניווט" className="flex flex-wrap justify-center gap-x-6 gap-y-2 text-sm">
             <Link href="/about" className="text-white/75 underline-offset-4 hover:text-white hover:underline">
               אודות
