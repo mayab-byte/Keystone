@@ -14,6 +14,7 @@ const LOGOS = [
   { name: "כלל", src: "/logos/clal.jpg" },
   { name: "מנורה מבטחים", src: "/logos/menora.jpg" },
   { name: "הכשרה חברה לביטוח", src: "/logos/hachshara.jpg" },
+  { name: "מיטב בית השקעות", src: "/logos/meitav.jpg" },
 ];
 
 export default function ClientLogos() {
