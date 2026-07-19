@@ -20,7 +20,7 @@ export const site = {
   url: RAW_URL.replace(/\/$/, ""),
   name: "Keystone",
   description:
-    "Keystone — סוכנות 360 של שלומי אחלופי ושלומי פרידמן. תכנון השקעות חכם-מס, פנסיוני, פרישה וביטוח בליווי אישי.",
+    "Keystone · סוכנות 360 של שלומי אחלופי ושלומי פרידמן. תכנון השקעות חכם-מס, פנסיוני, פרישה וביטוח בליווי אישי.",
   locale: "he_IL",
   indexable: process.env.NEXT_PUBLIC_INDEXABLE === "true",
 };

@@ -186,7 +186,7 @@ export default function LeadForm({
       </div>
 
       <p className={`mt-4 text-center text-xs ${noteCls}`}>
-        ההודעה נפתחת בוואטסאפ — בלי ספאם, בלי התחייבות.
+        ההודעה נפתחת בוואטסאפ, בלי ספאם, בלי התחייבות.
       </p>
     </form>
   );

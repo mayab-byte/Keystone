@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { brand, contact, KeystoneFooter, KeystoneHeader } from "../shared";
 
 export const metadata: Metadata = {
-  title: "מדיניות פרטיות — Keystone",
+  title: "מדיניות פרטיות · Keystone",
   description: "מדיניות הגנת הפרטיות של אתר Keystone.",
 };
 
@@ -34,7 +34,7 @@ const sections: { heading: string; paragraphs: string[]; list?: string[] }[] = [
     paragraphs: ["המידע שנמסר משמש למטרות הבאות בלבד:"],
     list: [
       "יצירת קשר חוזר ומענה לפנייתכם.",
-      "משלוח דיוור מקצועי ושיווקי — רק אם נתתם לכך הסכמה מפורשת בטופס, ובכפוף לזכותכם להסיר את עצמכם בכל עת.",
+      "משלוח דיוור מקצועי ושיווקי, רק אם נתתם לכך הסכמה מפורשת בטופס, ובכפוף לזכותכם להסיר את עצמכם בכל עת.",
       "תפעול, אבטחה ושיפור של האתר והשירות.",
     ],
   },

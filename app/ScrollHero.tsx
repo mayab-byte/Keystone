@@ -200,7 +200,7 @@ export default function ScrollHero() {
               Value is what you get.”
             </p>
             <p className="mt-3 text-sm text-white/75" dir="ltr">
-              — Warren Buffett
+              Warren Buffett
             </p>
           </div>
 
@@ -216,7 +216,7 @@ export default function ScrollHero() {
           {/* 4 — the promise */}
           <div className={reducedMotion ? "" : stageCls} style={style(3)}>
             <p className="mx-auto max-w-xl text-xl leading-relaxed text-white/90 sm:text-2xl">
-              רוב המשקיעים בישראל משלמים כל שנה מס שהם לא חייבים לשלם — ואף
+              רוב המשקיעים בישראל משלמים כל שנה מס שהם לא חייבים לשלם, ואף
               אחד לא סיפר להם. אנחנו מראים לכם בדיוק כמה זה עולה לכם, ומה
               עושים עם זה.
             </p>
@@ -234,7 +234,7 @@ export default function ScrollHero() {
                 style={{ backgroundImage: "var(--ks-grad)" }}
               >
                 <CalendarCheck className="h-5 w-5" />
-                לבדיקת המס שלכם — ללא עלות
+                לבדיקת המס שלכם, ללא עלות
               </a>
               <a
                 href={contact.whatsapp}

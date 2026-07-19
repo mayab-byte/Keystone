@@ -12,9 +12,9 @@ import { articles } from "../articles";
 import { abs } from "../site";
 
 export const metadata: Metadata = {
-  title: "בלוג — Keystone · מדריכים על השקעות, מיסוי ותכנון פיננסי",
+  title: "בלוג · Keystone · מדריכים על השקעות, מיסוי ותכנון פיננסי",
   description:
-    "מדריכים קצרים וברורים על מיסוי השקעות, פוליסות חיסכון ותכנון פיננסי למשפחה — מאת שלומי אחלופי ושלומי פרידמן.",
+    "מדריכים קצרים וברורים על מיסוי השקעות, פוליסות חיסכון ותכנון פיננסי למשפחה, מאת שלומי אחלופי ושלומי פרידמן.",
   alternates: { canonical: abs("/blog") },
 };
 
@@ -32,7 +32,7 @@ export default function KeystoneBlogPage() {
               ידע ששווה <GradientText>כסף.</GradientText>
             </h1>
             <p className="mx-auto mt-4 max-w-2xl text-white/70">
-              תשובות ישירות לשאלות שמשקיעים באמת שואלים — מיסוי, פוליסות חיסכון
+              תשובות ישירות לשאלות שמשקיעים באמת שואלים, מיסוי, פוליסות חיסכון
               ותכנון פיננסי למשפחה. בלי ז&apos;רגון, עם מספרים.
             </p>
           </div>

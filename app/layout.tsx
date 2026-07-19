@@ -12,7 +12,7 @@ const assistant = Assistant({
   display: "swap",
 });
 
-const TITLE = "Keystone — פיננסים · פנסיוני · פרישה · ביטוח";
+const TITLE = "Keystone · פיננסים · פנסיוני · פרישה · ביטוח";
 
 export const metadata: Metadata = {
   metadataBase: new URL(site.url),

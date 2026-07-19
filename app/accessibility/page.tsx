@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { brand, contact, KeystoneFooter, KeystoneHeader } from "../shared";
 
 export const metadata: Metadata = {
-  title: "הצהרת נגישות — Keystone",
+  title: "הצהרת נגישות · Keystone",
   description: "הצהרת הנגישות של אתר Keystone לפי תקן ישראלי 5568 ברמה AA.",
 };
 
@@ -40,7 +40,7 @@ export default function KeystoneAccessibilityPage() {
               <li>מבנה כותרות היררכי ותגיות סמנטיות התומכות בקוראי מסך.</li>
               <li>טקסט חלופי (alt) לתמונות בעלות משמעות, וסימון רכיבים דקורטיביים כמוסתרים מקוראי מסך.</li>
               <li>טפסים עם תוויות ברורות, סימון שדות חובה והנחיות שגיאה מובנות.</li>
-              <li>תמיכה בהעדפת &quot;הפחתת תנועה&quot; — אנימציות מבוטלות עבור משתמשים שביקשו זאת במערכת ההפעלה.</li>
+              <li>תמיכה בהעדפת &quot;הפחתת תנועה&quot;, אנימציות מבוטלות עבור משתמשים שביקשו זאת במערכת ההפעלה.</li>
               <li>תצוגה רספונסיבית מלאה והתאמה להגדלת טקסט עד 200% ללא אובדן תוכן.</li>
               <li>אזורי לחיצה בגודל מספק במובייל (44 פיקסלים לפחות).</li>
             </ul>

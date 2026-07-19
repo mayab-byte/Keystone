@@ -31,9 +31,9 @@ import {
 } from "./shared";
 
 export const metadata: Metadata = {
-  title: "Keystone — שלומי אחלופי ושלומי פרידמן · פיננסים · פנסיוני · פרישה · ביטוח",
+  title: "Keystone · שלומי אחלופי ושלומי פרידמן · פיננסים · פנסיוני · פרישה · ביטוח",
   description:
-    "Keystone — סוכנות 360 של שלומי אחלופי ושלומי פרידמן. תכנון השקעות חכם מס, פנסיוני, פרישה וביטוח בליווי אישי.",
+    "Keystone · סוכנות 360 של שלומי אחלופי ושלומי פרידמן. תכנון השקעות חכם מס, פנסיוני, פרישה וביטוח בליווי אישי.",
   alternates: { canonical: abs("/") },
 };
 
@@ -46,17 +46,17 @@ const reasons = [
   {
     Icon: BadgePercent,
     title: "מספרים, לא ז'רגון",
-    text: "כל המלצה מגיעה עם חישוב קונקרטי: מה, למה, וכמה זה שווה לכם — בשקלים, לא בסיסמאות.",
+    text: "כל המלצה מגיעה עם חישוב קונקרטי: מה, למה, וכמה זה שווה לכם, בשקלים, לא בסיסמאות.",
   },
   {
     Icon: Users,
     title: "שתי מומחיות, תמונה אחת",
-    text: "פיננסים וביטוח תחת קורת גג אחת. מסתכלים על התמונה המלאה — ואומרים לכם את האמת.",
+    text: "פיננסים וביטוח תחת קורת גג אחת. מסתכלים על התמונה המלאה, ואומרים לכם את האמת.",
   },
   {
     Icon: Handshake,
     title: "ליווי אישי לאורך שנים",
-    text: "אתם מדברים איתנו, לא עם מוקד. הלקוחות שלנו נשארים — כי יש להם מי שמסתכל על הכסף שלהם כל השנה.",
+    text: "אתם מדברים איתנו, לא עם מוקד. הלקוחות שלנו נשארים, כי יש להם מי שמסתכל על הכסף שלהם כל השנה.",
   },
 ];
 
@@ -70,7 +70,7 @@ const stats = [
 const testimonials = [
   {
     quote:
-      "הגעתי עם 1.1 מיליון שקל. היום התיק שלי עומד על 1.5 מיליון — ואני ישן בשקט.",
+      "הגעתי עם 1.1 מיליון שקל. היום התיק שלי עומד על 1.5 מיליון, ואני ישן בשקט.",
     name: "דוד",
     detail: "לקוח מלווה",
   },
@@ -82,7 +82,7 @@ const testimonials = [
   },
   {
     quote:
-      "התיק שלי — 950 אלף שקל — עבר לפוליסות חיסכון. את החיסכון בעמלות ובמס הרגשתי כבר בשנה הראשונה.",
+      "התיק שלי, 950 אלף שקל, עבר לפוליסות חיסכון. את החיסכון בעמלות ובמס הרגשתי כבר בשנה הראשונה.",
     name: "לקוחה מלווה",
     detail: "מעבר מתיק מיועץ בבנק",
   },
@@ -104,10 +104,10 @@ export default function KeystonePage() {
       >
         <SectionHead eyebrow="קצת עלינו" title="שני שלומי. שתי מומחיות. דרך אחת." />
         <p className="mx-auto mt-6 max-w-3xl text-center text-lg leading-relaxed text-black/70">
-          Keystone היא סוכנות 360 שהקמנו יחד — שלומי אחלופי בצד הפיננסי
+          Keystone היא סוכנות 360 שהקמנו יחד, שלומי אחלופי בצד הפיננסי
           ושלומי פרידמן בצד הביטוחי. עם ניסיון מצטבר של 17 שנה ומאות משפחות
           שאנחנו מלווים, אנחנו מאמינים בדבר אחד פשוט: להסתכל על התמונה
-          המלאה של הכסף שלכם — ולהגיד לכם את האמת, במספרים.
+          המלאה של הכסף שלכם, ולהגיד לכם את האמת, במספרים.
         </p>
 
         <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
@@ -120,7 +120,7 @@ export default function KeystonePage() {
           <article className="flex h-80 flex-col justify-center rounded-2xl border border-black/8 bg-white p-7 shadow-soft">
             <Quote aria-hidden className="h-6 w-6 -scale-x-100 text-(--ks-teal)" />
             <p className="mt-3 text-[15px] leading-relaxed text-black/75">
-              אנחנו שואלים קודם כמה מס אתם משלמים על מה שיש לכם עכשיו — ואז
+              אנחנו שואלים קודם כמה מס אתם משלמים על מה שיש לכם עכשיו, ואז
               בונים את התיק סביב התשובה.
             </p>
             <div className="mt-5 border-t border-black/5 pt-4">
@@ -161,7 +161,7 @@ export default function KeystonePage() {
             title="ארבעה תחומים. תמונה אחת שלמה."
           />
           <p className="mt-4 text-center text-[15px] text-black/55">
-            גללו למטה — כל שירות מופיע במלואו, ואז ממשיכים באתר
+            גללו למטה, כל שירות מופיע במלואו, ואז ממשיכים באתר
           </p>
         </div>
         <div className="mt-10">
@@ -177,17 +177,17 @@ export default function KeystonePage() {
           {/* The core example from the strategy brief */}
           <div className="mx-auto mt-12 max-w-3xl rounded-3xl border border-white/10 bg-white/5 p-8 md:p-10">
             <p className="text-lg leading-relaxed text-white/85">
-              תיק של מיליון ₪ עשה 10% — <strong>100,000 ₪ רווח</strong>. הבנק
+              תיק של מיליון ₪ עשה 10%, <strong>100,000 ₪ רווח</strong>. הבנק
               המליץ &quot;לעבור לשוק הישראלי&quot;, ובדרך שילמתם 25% מס רווח
               הון: <strong className="text-(--ks-green)">25,000 ₪</strong>.
             </p>
             <p className="mt-4 text-lg leading-relaxed text-white/85">
-              בפוליסת חיסכון? אותו מעבר בדיוק בין מסלולים —{" "}
+              בפוליסת חיסכון? אותו מעבר בדיוק בין מסלולים,{" "}
               <strong>בלי אירוע מס בדרך</strong>. זו לא תשואה טובה יותר. זה אותו
               כסף, שממשיך לעבוד בשבילכם.
             </p>
             <p className="mt-5 text-sm text-white/65">
-              * בפוליסת חיסכון המס משולם במועד המשיכה — דחיית מס אפקטיבית במעבר
+              * בפוליסת חיסכון המס משולם במועד המשיכה, דחיית מס אפקטיבית במעבר
               בין מסלולים, לא פטור ממס.
             </p>
             {/* Mid-page CTA — right after the core value argument */}
@@ -236,7 +236,7 @@ export default function KeystonePage() {
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
               src={`${BASE}/testimonials-bg.jpg`}
-              alt="משפחה נהנית יחד — לקוחות Keystone"
+              alt="משפחה נהנית יחד, לקוחות Keystone"
               className="absolute inset-0 h-full w-full object-cover object-center"
             />
           </div>
@@ -364,7 +364,7 @@ export default function KeystonePage() {
               <GradientText>בואו נבדוק.</GradientText>
             </h2>
             <p className="mt-4 max-w-xl text-white/65">
-              שיחת ההיכרות הראשונה היא עלינו — בלי עלות ובלי התחייבות. השאירו
+              שיחת ההיכרות הראשונה היא עלינו, בלי עלות ובלי התחייבות. השאירו
               פרטים או פנו ישירות, ונחזור אליכם עוד היום.
             </p>
             <div className="mt-8 space-y-3">
@@ -402,7 +402,7 @@ export default function KeystonePage() {
             </div>
           </div>
           <div className="rounded-3xl border border-white/10 bg-white/5 p-7 md:p-8">
-            <h3 className="text-xl font-bold">השאירו פרטים — נחזור עוד היום</h3>
+            <h3 className="text-xl font-bold">השאירו פרטים, נחזור עוד היום</h3>
             <div className="mt-5">
               <LeadForm whatsappNumber={contact.whatsappNumber} />
             </div>

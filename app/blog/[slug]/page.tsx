@@ -25,7 +25,7 @@ export async function generateMetadata({
   const article = getArticle(slug);
   if (!article) return {};
   return {
-    title: `${article.title} — Keystone`,
+    title: `${article.title} · Keystone`,
     description: article.excerpt,
     alternates: { canonical: abs(`/blog/${slug}`) },
     openGraph: {
@@ -278,7 +278,7 @@ export default async function KeystoneArticlePage({
               רוצים לדעת כמה זה שווה <GradientText>אצלכם?</GradientText>
             </h2>
             <p className="mx-auto mt-3 max-w-xl text-white/70">
-              שיחת בדיקה ראשונה ללא עלות וללא התחייבות — עוברים על המספרים
+              שיחת בדיקה ראשונה ללא עלות וללא התחייבות, עוברים על המספרים
               שלכם ומראים את האלטרנטיבות.
             </p>
             <Link

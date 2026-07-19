@@ -12,9 +12,9 @@ import {
 import { abs } from "../site";
 
 export const metadata: Metadata = {
-  title: "צור קשר — Keystone",
+  title: "צור קשר · Keystone",
   description:
-    "השאירו פרטים או פנו ישירות — שיחת היכרות ראשונה ללא עלות וללא התחייבות. Keystone · פיננסים, פנסיוני, פרישה וביטוח.",
+    "השאירו פרטים או פנו ישירות, שיחת היכרות ראשונה ללא עלות וללא התחייבות. Keystone · פיננסים, פנסיוני, פרישה וביטוח.",
   alternates: { canonical: abs("/contact") },
 };
 
@@ -31,7 +31,7 @@ export default function KeystoneContactPage() {
               <GradientText>בואו נבדוק.</GradientText>
             </h1>
             <p className="mt-4 max-w-xl text-white/70">
-              שיחת ההיכרות הראשונה היא עלינו — בלי עלות ובלי התחייבות. השאירו
+              שיחת ההיכרות הראשונה היא עלינו, בלי עלות ובלי התחייבות. השאירו
               פרטים או פנו ישירות, ונחזור אליכם עוד היום.
             </p>
           </div>
@@ -75,7 +75,7 @@ export default function KeystoneContactPage() {
             </div>
           </div>
           <div className="rounded-3xl border border-black/8 bg-ground p-7 shadow-soft md:p-8">
-            <h2 className="text-xl font-bold">השאירו פרטים — נחזור עוד היום</h2>
+            <h2 className="text-xl font-bold">השאירו פרטים, נחזור עוד היום</h2>
             <div className="mt-5">
               <LeadForm whatsappNumber={contact.whatsappNumber} tone="light" />
             </div>

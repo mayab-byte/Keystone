@@ -27,12 +27,12 @@ export async function generateMetadata({
   const service = getService(slug);
   if (!service) return {};
   return {
-    title: `${service.title} — Keystone`,
+    title: `${service.title} · Keystone`,
     description: service.short,
     alternates: { canonical: abs(`/services/${slug}`) },
     openGraph: {
       type: "website",
-      title: `${service.title} — Keystone`,
+      title: `${service.title} · Keystone`,
       description: service.short,
       url: abs(`/services/${slug}`),
       images: [`${site.url}${service.image}`],
@@ -156,7 +156,7 @@ export default async function KeystoneServicePage({
                 רוצים לדבר על {service.title}?
               </h2>
               <p className="mx-auto mt-3 max-w-xl text-black/65">
-                השאירו פרטים ונחזור אליכם עוד היום — שיחת היכרות ראשונה ללא
+                השאירו פרטים ונחזור אליכם עוד היום, שיחת היכרות ראשונה ללא
                 עלות וללא התחייבות.
               </p>
             </div>
