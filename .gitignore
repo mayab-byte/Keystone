@@ -4,3 +4,6 @@ out/
 *.tsbuildinfo
 next-env.d.ts
 .env*
+
+# local preview server dir (keystone-site skill)
+.serve/
