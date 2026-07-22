@@ -113,7 +113,7 @@ export default function KeystonePage() {
         <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
-            src={`${BASE}/founder-achlufi.jpg`}
+            src={`${BASE}/founder-fridman.jpg`}
             alt="שלומי אחלופי"
             className="h-80 w-full rounded-2xl object-cover object-top shadow-soft"
           />
@@ -133,7 +133,7 @@ export default function KeystonePage() {
 
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
-            src={`${BASE}/founder-fridman.jpg`}
+            src={`${BASE}/founder-achlufi.jpg`}
             alt="שלומי פרידמן"
             className="h-80 w-full rounded-2xl object-cover object-top shadow-soft"
           />
