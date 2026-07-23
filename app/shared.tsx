@@ -116,7 +116,7 @@ export function KeystoneHeader() {
             </Link>
             <ServicesNav />
             <Link href="/blog" className="hover:text-(--ks-green)">
-              בלוג
+              ידע מקצועי
             </Link>
             <Link href="/contact" className="hover:text-(--ks-green)">
               צור קשר
@@ -149,7 +149,7 @@ export function KeystoneFooter() {
               צור קשר
             </Link>
             <Link href="/blog" className="text-white/75 underline-offset-4 hover:text-white hover:underline">
-              בלוג
+              ידע מקצועי
             </Link>
             <Link href="/privacy" className="text-white/75 underline-offset-4 hover:text-white hover:underline">
               מדיניות פרטיות

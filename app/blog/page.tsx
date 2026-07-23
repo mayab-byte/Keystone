@@ -7,14 +7,16 @@ import {
   GradientText,
   KeystoneFooter,
   KeystoneHeader,
+  SectionHead,
 } from "../shared";
 import { articles } from "../articles";
 import { abs } from "../site";
+import ProfessionalKnowledge from "../ProfessionalKnowledge";
 
 export const metadata: Metadata = {
-  title: "בלוג · Keystone · מדריכים על השקעות, מיסוי ותכנון פיננסי",
+  title: "ידע מקצועי · Keystone · מדריכים והשוואת עמלות מסחר",
   description:
-    "מדריכים קצרים וברורים על מיסוי השקעות, פוליסות חיסכון ותכנון פיננסי למשפחה, מאת שלומי אחלופי ושלומי פרידמן.",
+    "ידע מקצועי מבית Keystone: מדריכים קצרים על מיסוי השקעות ותכנון פיננסי, והשוואת עמלות מסחר של בתי השקעות ובנקים. בלי ז'רגון, עם מספרים.",
   alternates: { canonical: abs("/blog") },
 };
 
@@ -27,7 +29,7 @@ export default function KeystoneBlogPage() {
       <main id="main">
         <section className="bg-black py-16 text-white md:py-20">
           <div className="reveal-down mx-auto max-w-6xl px-5 text-center">
-            <p className="text-sm font-bold text-(--ks-green)">הבלוג של Keystone</p>
+            <p className="text-sm font-bold text-(--ks-green)">ידע מקצועי</p>
             <h1 className="mt-2 text-4xl font-bold sm:text-5xl">
               ידע ששווה <GradientText>כסף.</GradientText>
             </h1>
@@ -39,7 +41,8 @@ export default function KeystoneBlogPage() {
         </section>
 
         <section className="mx-auto max-w-6xl px-5 py-16 md:py-20">
-          <ul className="grid gap-6 md:grid-cols-3">
+          <SectionHead eyebrow="מאמרים" title="מדריכים קצרים, בגובה העיניים" />
+          <ul className="mt-10 grid gap-6 md:grid-cols-3">
             {articles.map((a) => (
               <li key={a.slug} className="h-full">
                 <article className="flex h-full flex-col overflow-hidden rounded-2xl border border-black/8 bg-white shadow-soft transition-all hover:-translate-y-1 hover:shadow-lift">
@@ -88,6 +91,8 @@ export default function KeystoneBlogPage() {
             ))}
           </ul>
         </section>
+
+        <ProfessionalKnowledge />
       </main>
       <KeystoneFooter />
     </div>

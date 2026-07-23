@@ -79,7 +79,7 @@ export default async function KeystoneArticlePage({
           __html: JSON.stringify(
             breadcrumbLd([
               { name: "בית", path: "/" },
-              { name: "בלוג", path: "/blog" },
+              { name: "ידע מקצועי", path: "/blog" },
               { name: article.title, path: `/blog/${slug}` },
             ]),
           ),
@@ -96,7 +96,7 @@ export default async function KeystoneArticlePage({
                 className="inline-flex items-center gap-1.5 text-white/75 hover:text-(--ks-green)"
               >
                 <ArrowRight aria-hidden className="h-4 w-4" />
-                חזרה לבלוג
+                חזרה לידע מקצועי
               </Link>
             </nav>
             <h1 className="mt-5 text-3xl font-bold leading-tight sm:text-4xl">
