@@ -3,14 +3,37 @@
    (and drop NEXT_PUBLIC_BASE_PATH). The github.io preview stays out of search
    by default so placeholder content is never indexed. */
 
-// Placeholder contact details — swap for the client's real ones before launch.
-// Kept here (plain data, no JSX) so metadata routes (sitemap/robots) can import
-// it without pulling in React components. Re-exported from ./shared for the UI.
+// Contact details. Kept here (plain data, no JSX) so metadata routes
+// (sitemap/robots) can import it without pulling in React components.
+// Re-exported from ./shared for the UI.
+//
+// Two partners, each with their own line. `contact` is the primary entry used
+// for JSON-LD and the lead form; `partners` drives the contact sections that
+// list both people.
+export const partners = [
+  {
+    name: "שלומי אחלופי",
+    role: "פיננסים והשקעות",
+    phone: "050-233-4100",
+    whatsappNumber: "972502334100",
+    whatsapp: "https://wa.me/972502334100",
+    email: "shlomiac.ins@gmail.com",
+  },
+  {
+    name: "שלומי פרידמן",
+    role: "ביטוח",
+    phone: "054-574-3132",
+    whatsappNumber: "972545743132",
+    whatsapp: "https://wa.me/972545743132",
+    email: "shlomo9879@gmail.com",
+  },
+];
+
 export const contact = {
-  phone: "050-000-0000",
-  whatsappNumber: "972500000000",
-  whatsapp: "https://wa.me/972500000000",
-  email: "office@keystone-fin.co.il",
+  phone: partners[0].phone,
+  whatsappNumber: partners[0].whatsappNumber,
+  whatsapp: partners[0].whatsapp,
+  email: partners[0].email,
 };
 
 const RAW_URL =

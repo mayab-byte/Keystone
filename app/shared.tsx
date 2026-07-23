@@ -2,7 +2,7 @@ import Link from "next/link";
 import type { CSSProperties } from "react";
 import { Phone } from "lucide-react";
 import { WhatsappIcon } from "@/components/icons/social";
-import { contact } from "./site";
+import { contact, partners } from "./site";
 import ServicesNav from "./ServicesNav";
 
 /* Keystone brand palette (from the client's brand book):
@@ -26,7 +26,7 @@ export const enSerif =
   '"Times New Roman MT", "Times New Roman MT Std", "Times New Roman", Times, serif';
 
 // Contact details live in ./site (plain data) so metadata routes can use them.
-export { contact };
+export { contact, partners };
 
 // Base path for hosting under a sub-directory (e.g. GitHub Pages "/Keystone").
 // Empty in local dev; set via NEXT_PUBLIC_BASE_PATH at build time.

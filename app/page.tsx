@@ -24,6 +24,7 @@ import {
   BASE,
   brand,
   contact,
+  partners,
   GradientText,
   KeystoneFooter,
   KeystoneHeader,
@@ -86,6 +87,12 @@ const testimonials = [
     name: "לקוחה מלווה",
     detail: "מעבר מתיק מיועץ בבנק",
   },
+  {
+    quote:
+      "עברתי לא מעט סוכני ביטוח לאורך השנים, אבל מהרגע שהגעתי אליכם הבנתי שיש פה משהו אחר. קיבלתי יחס אישי, סבלנות והסברים בגובה העיניים, בלי לחץ ובלי לנסות למכור לי דברים שלא באמת הייתי צריך. עשיתם לי סדר בכל הביטוחים, מצאתם כיסויים כפולים, דאגתם שאהיה מוגן בצורה הנכונה וגם חסכתם לי כסף. הכי חשוב מבחינתי זה לדעת שיש לי למי לפנות ושיש מי שדואג לי גם אחרי שהפוליסה נסגרת. ממליץ מכל הלב לכל מי שמחפש אנשי מקצוע אמינים, שירותיים וזמינים. תודה על הליווי והאכפתיות.",
+    name: "רון",
+    detail: "ביקורת תיק ביטוח",
+  },
 ];
 
 export default function KeystonePage() {
@@ -111,26 +118,7 @@ export default function KeystonePage() {
         </p>
 
         <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img
-            src={`${BASE}/founder-achlufi.jpg`}
-            alt="שלומי אחלופי"
-            className="h-80 w-full rounded-2xl object-cover object-top shadow-soft"
-          />
-          <article className="flex h-80 flex-col justify-center rounded-2xl border border-black/8 bg-white p-7 shadow-soft">
-            <Quote aria-hidden className="h-6 w-6 -scale-x-100 text-(--ks-teal)" />
-            <p className="mt-3 text-[15px] leading-relaxed text-black/75">
-              אנחנו שואלים קודם כמה מס אתם משלמים על מה שיש לכם עכשיו, ואז
-              בונים את התיק סביב התשובה.
-            </p>
-            <div className="mt-5 border-t border-black/5 pt-4">
-              <p className="font-bold">שלומי פרידמן</p>
-              <p className="text-sm font-semibold text-(--ks-teal-ink)">
-                שותף מייסד · פיננסים והשקעות
-              </p>
-            </div>
-          </article>
-
+          {/* Right side (RTL): שלומי פרידמן — ביטוח */}
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
             src={`${BASE}/founder-fridman.jpg`}
@@ -144,9 +132,30 @@ export default function KeystonePage() {
               כפול על שום דבר.
             </p>
             <div className="mt-5 border-t border-black/5 pt-4">
-              <p className="font-bold">שלומי אחלופי</p>
+              <p className="font-bold">שלומי פרידמן</p>
               <p className="text-sm font-semibold text-(--ks-teal-ink)">
                 שותף מייסד · ביטוח
+              </p>
+            </div>
+          </article>
+
+          {/* Left side (RTL): שלומי אחלופי — פיננסים והשקעות */}
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src={`${BASE}/founder-achlufi.jpg`}
+            alt="שלומי אחלופי"
+            className="h-80 w-full rounded-2xl object-cover object-top shadow-soft"
+          />
+          <article className="flex h-80 flex-col justify-center rounded-2xl border border-black/8 bg-white p-7 shadow-soft">
+            <Quote aria-hidden className="h-6 w-6 -scale-x-100 text-(--ks-teal)" />
+            <p className="mt-3 text-[15px] leading-relaxed text-black/75">
+              אנחנו שואלים קודם כמה מס אתם משלמים על מה שיש לכם עכשיו, ואז
+              בונים את התיק סביב התשובה.
+            </p>
+            <div className="mt-5 border-t border-black/5 pt-4">
+              <p className="font-bold">שלומי אחלופי</p>
+              <p className="text-sm font-semibold text-(--ks-teal-ink)">
+                שותף מייסד · פיננסים והשקעות
               </p>
             </div>
           </article>
@@ -367,38 +376,44 @@ export default function KeystonePage() {
               שיחת ההיכרות הראשונה היא עלינו, בלי עלות ובלי התחייבות. השאירו
               פרטים או פנו ישירות, ונחזור אליכם עוד היום.
             </p>
-            <div className="mt-8 space-y-3">
-              <a
-                href={`tel:${contact.phone.replace(/[^\d+]/g, "")}`}
-                className="flex items-center gap-3 text-white/80 transition-colors hover:text-(--ks-green)"
-              >
-                <span className="flex h-11 w-11 items-center justify-center rounded-full border border-white/20">
-                  <Phone className="h-5 w-5" />
-                </span>
-                <span dir="ltr" className="font-semibold">
-                  {contact.phone}
-                </span>
-              </a>
-              <a
-                href={contact.whatsapp}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center gap-3 text-white/80 transition-colors hover:text-(--ks-green)"
-              >
-                <span className="flex h-11 w-11 items-center justify-center rounded-full border border-white/20">
-                  <WhatsappIcon className="h-5 w-5" />
-                </span>
-                <span className="font-semibold">וואטסאפ ישיר</span>
-              </a>
-              <a
-                href={`mailto:${contact.email}`}
-                className="flex items-center gap-3 text-white/80 transition-colors hover:text-(--ks-green)"
-              >
-                <span className="flex h-11 w-11 items-center justify-center rounded-full border border-white/20">
-                  <Mail className="h-5 w-5" />
-                </span>
-                <span className="font-semibold">{contact.email}</span>
-              </a>
+            <div className="mt-8 space-y-7">
+              {partners.map((p) => (
+                <div key={p.name}>
+                  <p className="font-bold">{p.name}</p>
+                  <p className="text-sm font-semibold text-(--ks-green)">{p.role}</p>
+                  <div className="mt-3 space-y-2.5">
+                    <a
+                      href={`tel:${p.phone.replace(/[^\d+]/g, "")}`}
+                      className="flex items-center gap-3 text-white/80 transition-colors hover:text-(--ks-green)"
+                    >
+                      <span className="flex h-10 w-10 items-center justify-center rounded-full border border-white/20">
+                        <Phone className="h-4 w-4" />
+                      </span>
+                      <span dir="ltr" className="font-semibold">{p.phone}</span>
+                    </a>
+                    <a
+                      href={p.whatsapp}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center gap-3 text-white/80 transition-colors hover:text-(--ks-green)"
+                    >
+                      <span className="flex h-10 w-10 items-center justify-center rounded-full border border-white/20">
+                        <WhatsappIcon className="h-4 w-4" />
+                      </span>
+                      <span className="font-semibold">וואטסאפ ישיר</span>
+                    </a>
+                    <a
+                      href={`mailto:${p.email}`}
+                      className="flex items-center gap-3 text-white/80 transition-colors hover:text-(--ks-green)"
+                    >
+                      <span className="flex h-10 w-10 items-center justify-center rounded-full border border-white/20">
+                        <Mail className="h-4 w-4" />
+                      </span>
+                      <span dir="ltr" className="font-semibold">{p.email}</span>
+                    </a>
+                  </div>
+                </div>
+              ))}
             </div>
           </div>
           <div className="rounded-3xl border border-white/10 bg-white/5 p-7 md:p-8">

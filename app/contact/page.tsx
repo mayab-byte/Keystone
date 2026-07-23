@@ -5,6 +5,7 @@ import LeadForm from "../LeadForm";
 import {
   brand,
   contact,
+  partners,
   GradientText,
   KeystoneFooter,
   KeystoneHeader,
@@ -40,38 +41,44 @@ export default function KeystoneContactPage() {
         <section className="mx-auto grid max-w-5xl items-start gap-12 px-5 py-16 md:grid-cols-2 md:py-20">
           <div>
             <h2 className="text-xl font-bold">דרכי יצירת קשר</h2>
-            <div className="mt-6 space-y-3">
-              <a
-                href={`tel:${contact.phone.replace(/[^\d+]/g, "")}`}
-                className="flex items-center gap-3 text-black/80 transition-colors hover:text-(--ks-teal-ink)"
-              >
-                <span className="flex h-11 w-11 items-center justify-center rounded-full border border-black/15">
-                  <Phone className="h-5 w-5" />
-                </span>
-                <span dir="ltr" className="font-semibold">
-                  {contact.phone}
-                </span>
-              </a>
-              <a
-                href={contact.whatsapp}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center gap-3 text-black/80 transition-colors hover:text-(--ks-teal-ink)"
-              >
-                <span className="flex h-11 w-11 items-center justify-center rounded-full border border-black/15">
-                  <WhatsappIcon className="h-5 w-5" />
-                </span>
-                <span className="font-semibold">וואטסאפ ישיר</span>
-              </a>
-              <a
-                href={`mailto:${contact.email}`}
-                className="flex items-center gap-3 text-black/80 transition-colors hover:text-(--ks-teal-ink)"
-              >
-                <span className="flex h-11 w-11 items-center justify-center rounded-full border border-black/15">
-                  <Mail className="h-5 w-5" />
-                </span>
-                <span className="font-semibold">{contact.email}</span>
-              </a>
+            <div className="mt-6 space-y-7">
+              {partners.map((p) => (
+                <div key={p.name}>
+                  <p className="font-bold">{p.name}</p>
+                  <p className="text-sm font-semibold text-(--ks-teal-ink)">{p.role}</p>
+                  <div className="mt-3 space-y-2.5">
+                    <a
+                      href={`tel:${p.phone.replace(/[^\d+]/g, "")}`}
+                      className="flex items-center gap-3 text-black/80 transition-colors hover:text-(--ks-teal-ink)"
+                    >
+                      <span className="flex h-10 w-10 items-center justify-center rounded-full border border-black/15">
+                        <Phone className="h-4 w-4" />
+                      </span>
+                      <span dir="ltr" className="font-semibold">{p.phone}</span>
+                    </a>
+                    <a
+                      href={p.whatsapp}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center gap-3 text-black/80 transition-colors hover:text-(--ks-teal-ink)"
+                    >
+                      <span className="flex h-10 w-10 items-center justify-center rounded-full border border-black/15">
+                        <WhatsappIcon className="h-4 w-4" />
+                      </span>
+                      <span className="font-semibold">וואטסאפ ישיר</span>
+                    </a>
+                    <a
+                      href={`mailto:${p.email}`}
+                      className="flex items-center gap-3 text-black/80 transition-colors hover:text-(--ks-teal-ink)"
+                    >
+                      <span className="flex h-10 w-10 items-center justify-center rounded-full border border-black/15">
+                        <Mail className="h-4 w-4" />
+                      </span>
+                      <span dir="ltr" className="font-semibold">{p.email}</span>
+                    </a>
+                  </div>
+                </div>
+              ))}
             </div>
           </div>
           <div className="rounded-3xl border border-black/8 bg-ground p-7 shadow-soft md:p-8">
