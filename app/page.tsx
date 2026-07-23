@@ -17,6 +17,7 @@ import ServicesScroller from "./ServicesScroller";
 import LeadForm from "./LeadForm";
 import Marquee from "./Marquee";
 import ClientLogos from "./ClientLogos";
+import FeesTeaser from "./FeesTeaser";
 import { articles } from "./articles";
 import { services } from "./services";
 import { abs } from "./site";
@@ -351,6 +352,9 @@ export default function KeystonePage() {
           </p>
         </div>
       </section>
+
+      {/* ── Fees teaser → full table on the ידע מקצועי page ──────────────── */}
+      <FeesTeaser />
 
       <Marquee />
 

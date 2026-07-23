@@ -105,7 +105,7 @@ export function KeystoneHeader() {
       <header className="sticky top-0 z-40 border-b border-white/10 bg-black text-white">
         <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-5">
           <Link href="/" aria-label="Keystone · לעמוד הבית">
-            <Wordmark className="h-11" />
+            <Wordmark className="h-14" />
           </Link>
           <nav
             aria-label="ניווט ראשי"
