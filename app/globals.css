@@ -103,8 +103,8 @@ body {
 .marquee-track {
   display: inline-flex;
   align-items: center;
-  gap: 2.75rem;
-  padding-inline: 1.375rem;
+  /* Spacing lives on each item (margin-inline) so it stays uniform across the
+     -50% loop seam — the last item is followed by the first with no gap. */
   animation: ksMarquee 48s linear infinite;
   will-change: transform;
 }
@@ -120,6 +120,7 @@ body {
   font-weight: 600;
   color: #000;
   letter-spacing: 0.01em;
+  margin-inline: 1.375rem;
 }
 .marquee-k {
   font-family: "Times New Roman MT", "Times New Roman MT Std",
@@ -131,6 +132,7 @@ body {
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
+  margin-inline: 1.375rem;
 }
 
 /* Client / institution logos carousel (placeholder wordmarks, grayscale) */

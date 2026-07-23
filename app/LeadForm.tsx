@@ -1,14 +1,18 @@
 "use client";
 
 import { useState } from "react";
+import { useRouter } from "next/navigation";
 import { ArrowLeft } from "lucide-react";
-import { WhatsappIcon } from "@/components/icons/social";
 
 /* Lead form per the client's spec: full name, phone, email, privacy-policy
    consent and a submit button — all fields required and marked as such.
-   Fields are fully opaque (no translucency) for AA readability. No backend
-   yet — submit opens WhatsApp with a prefilled message; swap for a real
-   endpoint + CRM at build stage (see docs/keystone-build-checklist.md).
+   Fields are fully opaque (no translucency) for AA readability.
+
+   On submit the visitor lands on the /thank-you confirmation page. If a form
+   endpoint is configured (NEXT_PUBLIC_FORM_ENDPOINT — e.g. a Formspree URL) the
+   details are POSTed there first so the partners actually receive the lead;
+   without it the form only shows the thank-you page (no delivery yet).
+   WhatsApp is intentionally NOT wired here — it lives as its own contact link.
 
    `tone` adapts the label/helper colours to the surrounding background so
    text always clears AA contrast: "dark" for dark sections, "light" for
@@ -16,31 +20,40 @@ import { WhatsappIcon } from "@/components/icons/social";
    on desktop (used on the service pages). */
 
 export default function LeadForm({
-  whatsappNumber,
   tone = "dark",
   layout = "stack",
 }: {
-  whatsappNumber: string;
+  /** Kept for backward compatibility with existing call sites; unused now. */
+  whatsappNumber?: string;
   tone?: "dark" | "light";
   layout?: "stack" | "row";
 }) {
+  const router = useRouter();
   const [name, setName] = useState("");
   const [phone, setPhone] = useState("");
   const [email, setEmail] = useState("");
   const [consent, setConsent] = useState(false);
 
-  const submit = (e: React.FormEvent) => {
+  const submit = async (e: React.FormEvent) => {
     e.preventDefault();
-    const lines = [
-      `היי, אני ${name.trim()} ואשמח לבדיקת מס ללא עלות.`,
-      `טלפון לחזרה: ${phone.trim()}`,
-      `אימייל: ${email.trim()}`,
-      "אישרתי את מדיניות הפרטיות ואת קבלת הדיוור.",
-    ];
-    const url = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(
-      lines.join("\n"),
-    )}`;
-    window.open(url, "_blank", "noopener,noreferrer");
+    const endpoint = process.env.NEXT_PUBLIC_FORM_ENDPOINT;
+    if (endpoint) {
+      try {
+        await fetch(endpoint, {
+          method: "POST",
+          headers: { "Content-Type": "application/json", Accept: "application/json" },
+          body: JSON.stringify({
+            name: name.trim(),
+            phone: phone.trim(),
+            email: email.trim(),
+            consent,
+          }),
+        });
+      } catch {
+        /* Ignore network errors so the visitor still gets the confirmation. */
+      }
+    }
+    router.push("/thank-you");
   };
 
   const dark = tone === "dark";
@@ -179,14 +192,13 @@ export default function LeadForm({
           }`}
           style={{ backgroundImage: "var(--ks-grad)" }}
         >
-          <WhatsappIcon className="h-5 w-5" />
           שליחה
           <ArrowLeft aria-hidden className="h-4 w-4" />
         </button>
       </div>
 
       <p className={`mt-4 text-center text-xs ${noteCls}`}>
-        ההודעה נפתחת בוואטסאפ, בלי ספאם, בלי התחייבות.
+        לא שולחים ספאם. נחזור אליכם בהקדם.
       </p>
     </form>
   );

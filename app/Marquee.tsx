@@ -14,8 +14,9 @@ const WORDS = [
 ];
 
 export default function Marquee() {
-  // Two copies so the -50% loop is seamless.
-  const items = [...WORDS, ...WORDS];
+  // Four copies so a half-track (the -50% loop point) always exceeds the
+  // viewport width and the loop stays seamless with no gap at the seam.
+  const items = [...WORDS, ...WORDS, ...WORDS, ...WORDS];
   return (
     <div className="border-y border-black/10 bg-white py-5" aria-hidden>
       <div className="marquee" dir="ltr">
