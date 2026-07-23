@@ -294,7 +294,7 @@ export default function KeystonePage() {
       {/* ── Blog ───────────────────────────────────────────────────────── */}
       <section className="border-t border-black/5 bg-ground py-20 md:py-24">
         <div className="mx-auto max-w-6xl px-5">
-          <SectionHead eyebrow="ידע מקצועי" title="ידע ששווה כסף" />
+          <SectionHead eyebrow="הכתבות שלנו" title="ידע ששווה כסף" />
           <div className="mt-12 grid gap-5 md:grid-cols-3">
             {articles.map((a) => (
               <article

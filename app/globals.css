@@ -105,7 +105,7 @@ body {
   align-items: center;
   /* Spacing lives on each item (margin-inline) so it stays uniform across the
      -50% loop seam — the last item is followed by the first with no gap. */
-  animation: ksMarquee 48s linear infinite;
+  animation: ksMarquee 66s linear infinite;
   will-change: transform;
 }
 .marquee:hover .marquee-track { animation-play-state: paused; }
@@ -142,7 +142,7 @@ body {
   /* Spacing lives on each logo (margin-inline) rather than gap/padding here,
      so it stays uniform across the -50% loop seam — no half-gap or empty
      stretch when the last logo wraps back to the first. */
-  animation: ksMarquee 55s linear infinite;
+  animation: ksMarquee 75s linear infinite;
   will-change: transform;
 }
 .marquee:hover .logos-track { animation-play-state: paused; }
