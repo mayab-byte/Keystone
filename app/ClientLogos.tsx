@@ -31,7 +31,7 @@ export default function ClientLogos() {
       </div>
       <div
         className="marquee mt-10"
-        dir="rtl"
+        dir="ltr"
         aria-label="גופים מובילים שאיתם אנחנו עובדים"
       >
         <div className="logos-track">
