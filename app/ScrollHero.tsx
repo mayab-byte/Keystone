@@ -182,8 +182,16 @@ export default function ScrollHero() {
               alt="Keystone"
               className="mx-auto h-36 w-auto drop-shadow-[0_4px_24px_rgba(6,30,19,0.45)] sm:h-48"
             />
-            <p className="mt-5 text-white/80">
-              פיננסים · פנסיוני · פרישה · ביטוח
+            <p className="mt-6 text-sm tracking-wide text-white/85 sm:text-base">
+              פיננסים • פנסיוני • פרישה • ביטוח
+            </p>
+            <span
+              aria-hidden
+              className="mx-auto my-3 block h-px w-40 max-w-[70%]"
+              style={{ backgroundImage: "var(--ks-grad)" }}
+            />
+            <p className="text-sm font-semibold text-white/90 sm:text-base">
+              שלומי אחלופי & שלומי פרידמן
             </p>
           </div>
 
