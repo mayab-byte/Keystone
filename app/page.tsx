@@ -139,7 +139,7 @@ export default function KeystonePage() {
               כפול על שום דבר.
             </p>
             <div className="mt-5 border-t border-black/5 pt-4">
-              <p className="font-bold">שלומי פרידמן</p>
+              <p className="text-xl font-bold md:text-base">שלומי פרידמן</p>
               <p className="text-sm font-semibold text-(--ks-teal-ink)">
                 שותף מייסד · ביטוח
               </p>
@@ -160,7 +160,7 @@ export default function KeystonePage() {
               בונים את התיק סביב התשובה.
             </p>
             <div className="mt-5 border-t border-black/5 pt-4">
-              <p className="font-bold">שלומי אחלופי</p>
+              <p className="text-xl font-bold md:text-base">שלומי אחלופי</p>
               <p className="text-sm font-semibold text-(--ks-teal-ink)">
                 שותף מייסד · פיננסים והשקעות
               </p>
