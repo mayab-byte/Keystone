@@ -18,6 +18,7 @@ import LeadForm from "./LeadForm";
 import Marquee from "./Marquee";
 import ClientLogos from "./ClientLogos";
 import FeesTeaser from "./FeesTeaser";
+import TestimonialsCarousel from "./TestimonialsCarousel";
 import { articles } from "./articles";
 import { services } from "./services";
 import { abs } from "./site";
@@ -265,29 +266,7 @@ export default function KeystonePage() {
                 הלקוחות שלנו מספרים
               </h2>
             </div>
-            <div className="vmarquee mt-6 h-[340px] md:h-[400px]">
-              <div className="vmarquee-track">
-                {[...testimonials, ...testimonials].map(({ quote, name, detail }, i) => (
-                  <figure
-                    key={i}
-                    aria-hidden={i >= testimonials.length}
-                    className="shrink-0 border-t border-black/10 pb-6 pt-6"
-                  >
-                    <Quote
-                      aria-hidden
-                      className="h-6 w-6 -scale-x-100 text-(--ks-teal)"
-                    />
-                    <blockquote className="mt-3 text-[15px] leading-relaxed text-black/80">
-                      {quote}
-                    </blockquote>
-                    <figcaption className="mt-3">
-                      <p className="font-bold">{name}</p>
-                      <p className="text-sm text-black/60">{detail}</p>
-                    </figcaption>
-                  </figure>
-                ))}
-              </div>
-            </div>
+            <TestimonialsCarousel items={testimonials} />
           </div>
         </div>
       </section>
