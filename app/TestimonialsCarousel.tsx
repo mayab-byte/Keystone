@@ -3,12 +3,13 @@
 import { useEffect, useRef } from "react";
 import { Quote, ChevronUp, ChevronDown } from "lucide-react";
 
-/* Vertical testimonials carousel: gentle auto-scroll (top→bottom) that the
-   visitor can also drive manually — by scrolling/swiping inside the box or with
-   the up/down arrows. Any manual interaction (or hover) pauses the auto-motion
-   briefly, then it resumes. The list holds two identical copies so the scroll
-   wraps seamlessly in both directions. Auto-motion is disabled under
-   prefers-reduced-motion; manual scrolling and the arrows still work. */
+/* Vertical testimonials carousel: gentle auto-scroll (top→bottom) the visitor
+   can also drive manually — by scrolling/swiping inside the box or with the
+   large up/down arrows. Any interaction (or hover) pauses the auto-motion for a
+   few seconds, then it resumes. Three identical copies are rendered and the
+   scroll position is kept in the middle copy (with wide margins), so scrolling
+   wraps seamlessly in both directions and never hits a hard end. Auto-motion is
+   off under prefers-reduced-motion; manual scroll and the arrows still work. */
 
 type Testimonial = { quote: string; name: string; detail: string };
 
@@ -26,19 +27,24 @@ export default function TestimonialsCarousel({
     if (!el) return;
     const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
     const SPEED = 26; // px / second
-    el.scrollTop = 1; // avoid the initial wrap-up firing on 0
     let raf = 0;
     let last = 0;
+    let started = false;
 
     const frame = (ts: number) => {
       raf = requestAnimationFrame(frame);
-      const half = el.scrollHeight / 2;
-      if (half > 0) {
-        // seamless wrap in both directions (both halves are identical)
-        if (el.scrollTop >= half) el.scrollTop -= half;
-        else if (el.scrollTop <= 0) el.scrollTop += half;
+      const unit = el.scrollHeight / 3; // one copy (three are rendered)
+      if (unit > 0) {
+        if (!started) {
+          el.scrollTop = unit; // start in the middle copy
+          started = true;
+        }
+        // keep the position within the middle copy, wrapping by a whole copy
+        if (el.scrollTop > unit * 2.2) el.scrollTop -= unit;
+        else if (el.scrollTop < unit * 0.8) el.scrollTop += unit;
       }
-      const auto = !reduce && !hovering.current && ts >= pausedUntil.current;
+      const auto =
+        !reduce && !hovering.current && ts >= pausedUntil.current;
       if (auto && last) el.scrollTop += (SPEED * (ts - last)) / 1000;
       last = ts;
     };
@@ -46,15 +52,15 @@ export default function TestimonialsCarousel({
     return () => cancelAnimationFrame(raf);
   }, []);
 
-  const holdAuto = () => {
-    pausedUntil.current = performance.now() + 2500;
+  const hold = () => {
+    pausedUntil.current = performance.now() + 3000;
   };
   const nudge = (dir: 1 | -1) => {
-    holdAuto();
-    ref.current?.scrollBy({ top: dir * 200, behavior: "smooth" });
+    hold();
+    ref.current?.scrollBy({ top: dir * 230, behavior: "smooth" });
   };
 
-  const rows = [...items, ...items];
+  const rows = [...items, ...items, ...items];
 
   return (
     <div className="mt-6">
@@ -62,11 +68,11 @@ export default function TestimonialsCarousel({
         ref={ref}
         onMouseEnter={() => (hovering.current = true)}
         onMouseLeave={() => (hovering.current = false)}
-        onWheel={holdAuto}
-        onTouchStart={holdAuto}
-        onPointerDown={holdAuto}
-        className="vscroll h-[340px] md:h-[400px] overscroll-contain"
-        aria-label="המלצות לקוחות"
+        onWheel={hold}
+        onTouchStart={hold}
+        onPointerDown={hold}
+        className="vscroll h-[320px] overscroll-contain md:h-[380px]"
+        aria-label="המלצות לקוחות — ניתן לגלול"
         tabIndex={0}
       >
         {rows.map((t, i) => (
@@ -87,24 +93,27 @@ export default function TestimonialsCarousel({
         ))}
       </div>
 
-      {/* Manual controls — desktop and mobile */}
-      <div className="mt-4 flex items-center gap-3">
+      {/* Big, clear manual controls — desktop and mobile */}
+      <div className="mt-5 flex items-center gap-3">
         <button
           type="button"
           onClick={() => nudge(-1)}
-          aria-label="המלצה קודמת"
-          className="flex h-10 w-10 items-center justify-center rounded-full border border-black/15 text-black/70 transition-colors hover:border-(--ks-teal) hover:text-(--ks-teal-ink)"
+          aria-label="ההמלצה הקודמת"
+          className="flex h-12 w-12 items-center justify-center rounded-full text-black shadow-lift transition-transform hover:-translate-y-0.5"
+          style={{ backgroundImage: "var(--ks-grad)" }}
         >
-          <ChevronUp className="h-5 w-5" />
+          <ChevronUp className="h-6 w-6" strokeWidth={2.5} />
         </button>
         <button
           type="button"
           onClick={() => nudge(1)}
-          aria-label="המלצה הבאה"
-          className="flex h-10 w-10 items-center justify-center rounded-full border border-black/15 text-black/70 transition-colors hover:border-(--ks-teal) hover:text-(--ks-teal-ink)"
+          aria-label="ההמלצה הבאה"
+          className="flex h-12 w-12 items-center justify-center rounded-full text-black shadow-lift transition-transform hover:-translate-y-0.5"
+          style={{ backgroundImage: "var(--ks-grad)" }}
         >
-          <ChevronDown className="h-5 w-5" />
+          <ChevronDown className="h-6 w-6" strokeWidth={2.5} />
         </button>
+        <span className="text-sm text-black/50">גלול בין ההמלצות</span>
       </div>
     </div>
   );
