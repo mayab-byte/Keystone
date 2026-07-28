@@ -88,7 +88,7 @@ export default async function KeystoneArticlePage({
       <KeystoneHeader />
       <main id="main">
         {/* ── Article header ─────────────────────────────────────────── */}
-        <header className="bg-black py-14 text-white md:py-18">
+        <header className="bg-[#061e13] py-14 text-white md:py-18">
           <div className="reveal-down mx-auto max-w-3xl px-5">
             <nav aria-label="פירורי לחם" className="text-sm">
               <Link
@@ -203,7 +203,7 @@ export default async function KeystoneArticlePage({
                   <table className="w-full min-w-[560px] border-collapse text-right text-[15px]">
                     <caption className="sr-only">{s.table.caption}</caption>
                     <thead>
-                      <tr className="bg-black text-white">
+                      <tr className="bg-[#061e13] text-white">
                         {s.table.headers.map((h) => (
                           <th key={h} scope="col" className="px-4 py-3 font-bold">
                             {h}
@@ -272,7 +272,7 @@ export default async function KeystoneArticlePage({
         </article>
 
         {/* CTA band */}
-        <section className="bg-black py-14 text-white">
+        <section className="bg-[#061e13] py-14 text-white">
           <div className="mx-auto max-w-3xl px-5 text-center">
             <h2 className="text-2xl font-bold sm:text-3xl">
               רוצים לדעת כמה זה שווה <GradientText>אצלכם?</GradientText>

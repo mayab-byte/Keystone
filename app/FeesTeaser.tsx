@@ -12,7 +12,7 @@ const PREVIEW_ROWS = bankFees.slice(0, 4);
 
 export default function FeesTeaser() {
   return (
-    <section className="text-white" style={{ backgroundColor: "#0b2b31" }}>
+    <section className="text-white" style={{ backgroundColor: "#0a3321" }}>
       <div className="mx-auto max-w-4xl px-5 py-20 md:py-24">
         <SectionHead
           eyebrow="ידע מקצועי"
@@ -66,7 +66,7 @@ export default function FeesTeaser() {
             aria-hidden
             className="pointer-events-none absolute inset-x-0 bottom-0 h-24 rounded-b-2xl"
             style={{
-              background: "linear-gradient(to bottom, rgba(11,43,49,0) 0%, #0b2b31 92%)",
+              background: "linear-gradient(to bottom, rgba(10,51,33,0) 0%, #0a3321 92%)",
             }}
           />
         </div>

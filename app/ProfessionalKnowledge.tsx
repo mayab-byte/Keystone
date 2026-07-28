@@ -69,7 +69,7 @@ export default function ProfessionalKnowledge() {
     <section
       id="knowledge"
       className="scroll-mt-16 text-white"
-      style={{ backgroundColor: "#0b2b31" }}
+      style={{ backgroundColor: "#0a3321" }}
     >
       <div className="mx-auto max-w-6xl px-5 py-16 md:py-20">
         <SectionHead
@@ -90,7 +90,7 @@ export default function ProfessionalKnowledge() {
               <div key={label} className="flex flex-col items-center text-center">
                 <span
                   className="flex h-16 w-16 items-center justify-center rounded-2xl border border-white/12"
-                  style={{ backgroundColor: "rgba(126,217,87,0.10)" }}
+                  style={{ backgroundColor: "rgba(130,166,138,0.10)" }}
                 >
                   <Icon aria-hidden className="h-7 w-7 text-(--ks-green)" />
                 </span>

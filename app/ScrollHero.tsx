@@ -135,7 +135,7 @@ export default function ScrollHero() {
     >
       <div
         className={
-          "overflow-hidden bg-black text-white " +
+          "overflow-hidden bg-[#061e13] text-white " +
           (reducedMotion
             ? "relative min-h-screen"
             : "sticky top-16 h-[calc(100vh-4rem)]")
@@ -159,10 +159,10 @@ export default function ScrollHero() {
         {/* Legibility scrim */}
         <div
           aria-hidden
-          className="absolute inset-0 bg-black/45"
+          className="absolute inset-0 bg-[#061e13]/45"
           style={{
             backgroundImage:
-              "radial-gradient(ellipse at center, rgba(0,0,0,0.25) 0%, rgba(0,0,0,0.7) 100%)",
+              "radial-gradient(ellipse at center, rgba(6,30,19,0.25) 0%, rgba(6,30,19,0.7) 100%)",
           }}
         />
 
@@ -176,12 +176,11 @@ export default function ScrollHero() {
         >
           {/* 1 — welcome */}
           <div className={reducedMotion ? "" : stageCls} style={style(0)}>
-            <p className="text-lg font-semibold text-white/85">ברוכים הבאים ל-</p>
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
               src={`${BASE}/logo-full.png`}
               alt="Keystone"
-              className="mx-auto mt-4 h-24 w-auto drop-shadow-[0_4px_24px_rgba(0,0,0,0.45)] sm:h-28"
+              className="mx-auto h-36 w-auto drop-shadow-[0_4px_24px_rgba(6,30,19,0.45)] sm:h-48"
             />
             <p className="mt-5 text-white/80">
               פיננסים · פנסיוני · פרישה · ביטוח
@@ -240,7 +239,7 @@ export default function ScrollHero() {
                 href={contact.whatsapp}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 rounded-full border border-white/40 bg-black/40 px-7 py-3.5 font-semibold text-white transition-colors hover:border-(--ks-green) hover:text-(--ks-green)"
+                className="inline-flex items-center gap-2 rounded-full border border-white/40 bg-[#061e13]/40 px-7 py-3.5 font-semibold text-white transition-colors hover:border-(--ks-green) hover:text-(--ks-green)"
               >
                 <WhatsappIcon className="h-5 w-5" />
                 דברו איתנו בוואטסאפ
@@ -266,7 +265,7 @@ export default function ScrollHero() {
               className="absolute inset-x-0 bottom-6 flex flex-col items-center gap-1 text-sm text-white/75"
               style={{ opacity: Math.max(0, 1 - p * 8) }}
             >
-              גללו
+              גללו למטה
               <ChevronDown className="h-5 w-5 animate-bounce" />
             </div>
           )}

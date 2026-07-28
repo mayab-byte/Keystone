@@ -8,15 +8,15 @@
    ─────────────────────────────────────────────────────────────────────────── */
 
 @theme {
-  --color-ground: #faf8f4;
-  --color-ink: #181822;
+  --color-ground: #e9f0e0;
+  --color-ink: #061e13;
 
   --font-sans: var(--font-assistant), ui-sans-serif, system-ui, sans-serif;
 
-  --shadow-soft: 0 1px 2px rgba(24, 24, 34, 0.04),
-    0 8px 24px -12px rgba(24, 24, 34, 0.12);
-  --shadow-lift: 0 2px 4px rgba(24, 24, 34, 0.05),
-    0 24px 48px -20px rgba(24, 24, 34, 0.22);
+  --shadow-soft: 0 1px 2px rgba(6, 30, 19, 0.04),
+    0 8px 24px -12px rgba(6, 30, 19, 0.12);
+  --shadow-lift: 0 2px 4px rgba(6, 30, 19, 0.05),
+    0 24px 48px -20px rgba(6, 30, 19, 0.22);
 }
 
 html {
@@ -184,13 +184,13 @@ body {
   aspect-ratio: 3 / 2;
   border-radius: 22px;
   overflow: hidden;
-  box-shadow: 0 10px 30px rgba(15, 23, 42, 0.12);
+  box-shadow: 0 10px 30px rgba(6, 30, 19, 0.12);
   transition: transform 0.4s cubic-bezier(0.2, 0.7, 0.2, 1), box-shadow 0.4s;
   color: #fff;
 }
 .svc-card:hover {
   transform: scale(1.03);
-  box-shadow: 0 24px 50px rgba(0, 151, 178, 0.28);
+  box-shadow: 0 24px 50px rgba(68, 106, 67, 0.28);
 }
 .svc-bg {
   position: absolute;
@@ -208,10 +208,10 @@ body {
   inset: 0;
   background: linear-gradient(
     to top,
-    rgba(4, 20, 28, 0.92) 0%,
-    rgba(4, 20, 28, 0.55) 34%,
-    rgba(4, 20, 28, 0.1) 62%,
-    rgba(4, 20, 28, 0) 100%
+    rgba(6, 30, 19, 0.92) 0%,
+    rgba(6, 30, 19, 0.55) 34%,
+    rgba(6, 30, 19, 0.1) 62%,
+    rgba(6, 30, 19, 0) 100%
   );
 }
 .svc-num {
@@ -229,7 +229,7 @@ body {
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
   border: 1px solid rgba(255, 255, 255, 0.3);
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25);
+  box-shadow: 0 6px 18px rgba(6, 30, 19, 0.25);
   font-size: 22px;
   font-weight: 800;
   letter-spacing: 0.04em;
@@ -249,7 +249,7 @@ body {
   pointer-events: none;
 }
 .svc-num span {
-  background: linear-gradient(120deg, #c6f7d6, #7fe6ff);
+  background: linear-gradient(120deg, #82a68a, #c0d0c3);
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;

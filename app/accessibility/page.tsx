@@ -13,7 +13,7 @@ export default function KeystoneAccessibilityPage() {
     <div dir="rtl" lang="he" className="ks-scope bg-white text-black" style={brand}>
       <KeystoneHeader />
       <main id="main">
-        <header className="bg-black py-14 text-white">
+        <header className="bg-[#061e13] py-14 text-white">
           <div className="reveal-down mx-auto max-w-3xl px-5">
             <h1 className="text-3xl font-bold sm:text-4xl">הצהרת נגישות</h1>
             <p className="mt-3 text-white/70">עדכון אחרון: {LAST_UPDATED}</p>

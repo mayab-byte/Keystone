@@ -27,7 +27,7 @@ export default function KeystoneBlogPage() {
     <div dir="rtl" lang="he" className="ks-scope bg-white text-black" style={brand}>
       <KeystoneHeader />
       <main id="main">
-        <section className="bg-black py-16 text-white md:py-20">
+        <section className="bg-[#061e13] py-16 text-white md:py-20">
           <div className="reveal-down mx-auto max-w-6xl px-5 text-center">
             <p className="text-lg font-bold text-(--ks-green) sm:text-xl">ידע מקצועי</p>
             <h1 className="mt-2 text-4xl font-bold sm:text-5xl">

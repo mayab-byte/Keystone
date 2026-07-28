@@ -37,7 +37,7 @@ export default function ServiceHero({
       ref={wrapRef}
       onMouseMove={onMove}
       onMouseLeave={() => setOffset({ x: 0, y: 0 })}
-      className="relative h-[44vh] min-h-[340px] overflow-hidden bg-black md:h-[54vh]"
+      className="relative h-[44vh] min-h-[340px] overflow-hidden bg-[#061e13] md:h-[54vh]"
     >
       {/* eslint-disable-next-line @next/next/no-img-element */}
       <img
@@ -56,7 +56,7 @@ export default function ServiceHero({
         className="absolute inset-0"
         style={{
           background:
-            "linear-gradient(to top, rgba(4,20,28,0.90) 0%, rgba(4,20,28,0.5) 45%, rgba(4,20,28,0.28) 100%)",
+            "linear-gradient(to top, rgba(6,30,19,0.90) 0%, rgba(6,30,19,0.5) 45%, rgba(6,30,19,0.28) 100%)",
         }}
       />
       <div className="reveal-down relative mx-auto flex h-full max-w-5xl flex-col justify-end px-5 pb-10 text-white md:pb-12">
