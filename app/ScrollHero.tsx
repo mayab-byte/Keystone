@@ -193,6 +193,10 @@ export default function ScrollHero() {
             <p className="text-sm font-semibold text-white/90 sm:text-base">
               שלומי אחלופי & שלומי פרידמן
             </p>
+            <div className="mt-8 flex flex-col items-center gap-1 text-xs text-white/70">
+              גלול למטה
+              <ChevronDown className="h-4 w-4 animate-bounce" />
+            </div>
           </div>
 
           {/* 2 — quote */}
@@ -265,18 +269,6 @@ export default function ScrollHero() {
               </li>
             </ul>
           </div>
-
-          {/* Scroll hint — visible at the start only */}
-          {!reducedMotion && (
-            <div
-              aria-hidden
-              className="absolute inset-x-0 bottom-6 flex flex-col items-center gap-1 text-sm text-white/75"
-              style={{ opacity: Math.max(0, 1 - p * 8) }}
-            >
-              גללו למטה
-              <ChevronDown className="h-5 w-5 animate-bounce" />
-            </div>
-          )}
         </div>
       </div>
     </section>
