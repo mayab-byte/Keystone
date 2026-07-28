@@ -20,7 +20,7 @@ export default function ThankYouPage() {
     <div dir="rtl" lang="he" className="ks-scope bg-white text-black" style={brand}>
       <KeystoneHeader />
       <main id="main">
-        <section className="bg-[#061e13] text-white">
+        <section className="bg-[#000000] text-white">
           <div className="mx-auto flex max-w-3xl flex-col items-center px-5 py-20 text-center md:py-28">
             {/* Both partners together */}
             {/* eslint-disable-next-line @next/next/no-img-element */}

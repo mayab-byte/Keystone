@@ -103,8 +103,8 @@ export default function ServicesScroller({ services }: { services: Service[] }) 
 
   // ── Pinned scroll-driven gallery (desktop) ───────────────────────────────
   return (
-    <div ref={wrapRef} style={{ height: `${count * 85}vh` }} className="relative bg-[#061e13]">
-      <div className="sticky top-16 h-[calc(100vh-4rem)] w-screen overflow-hidden bg-[#061e13]">
+    <div ref={wrapRef} style={{ height: `${count * 85}vh` }} className="relative bg-[#000000]">
+      <div className="sticky top-16 h-[calc(100vh-4rem)] w-screen overflow-hidden bg-[#000000]">
         <div ref={trackRef} dir="ltr" className="flex h-full will-change-transform">
           {services.map((s) => (
             <Link
@@ -130,7 +130,7 @@ export default function ServicesScroller({ services }: { services: Service[] }) 
                   className="absolute inset-0"
                   style={{
                     background:
-                      "linear-gradient(to top, rgba(6,30,19,0.92) 0%, rgba(6,30,19,0.5) 45%, rgba(6,30,19,0.12) 100%)",
+                      "linear-gradient(to top, rgba(0,0,0,0.92) 0%, rgba(0,0,0,0.5) 45%, rgba(0,0,0,0.12) 100%)",
                   }}
                 />
                 <span className="svc-num" style={{ top: 24 }}>

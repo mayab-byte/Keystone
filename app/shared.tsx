@@ -6,7 +6,7 @@ import { contact, partners } from "./site";
 import ServicesNav from "./ServicesNav";
 
 /* Keystone green palette:
-   #061e13 (darkest) · #0a3321 (dark) · #446a43 (primary) · #82a68a (sage) ·
+   #000000 (darkest) · #0a3321 (dark) · #446a43 (primary) · #82a68a (sage) ·
    #c0d0c3 (mist) · #e9f0e0 (light) · #ffffff.
    Legacy token names (teal/green) are kept but now carry green values.
    --ks-teal-ink is the darkest green, used for small text/links on light
@@ -101,11 +101,11 @@ export function KeystoneHeader() {
       `}</style>
       <a
         href="#main"
-        className="sr-only focus:not-sr-only focus:absolute focus:right-3 focus:top-3 focus:z-50 focus:rounded-full focus:bg-[#061e13] focus:px-5 focus:py-2.5 focus:font-semibold focus:text-white"
+        className="sr-only focus:not-sr-only focus:absolute focus:right-3 focus:top-3 focus:z-50 focus:rounded-full focus:bg-[#000000] focus:px-5 focus:py-2.5 focus:font-semibold focus:text-white"
       >
         דילוג לתוכן הראשי
       </a>
-      <header className="sticky top-0 z-40 border-b border-white/10 bg-[#061e13] text-white">
+      <header className="sticky top-0 z-40 border-b border-white/10 bg-[#000000] text-white">
         <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-5">
           <Link href="/" aria-label="Keystone · לעמוד הבית">
             <Wordmark className="h-14" />
@@ -141,7 +141,7 @@ export function KeystoneHeader() {
 export function KeystoneFooter() {
   return (
     <>
-      <footer className="border-t border-white/10 bg-[#061e13] pb-10 pt-8 text-white">
+      <footer className="border-t border-white/10 bg-[#000000] pb-10 pt-8 text-white">
         <div className="mx-auto flex max-w-6xl flex-col items-center gap-4 px-5 text-center">
           <Wordmark className="h-20" />
           <nav aria-label="קישורי ניווט" className="flex flex-wrap justify-center gap-x-6 gap-y-2 text-sm">
@@ -176,7 +176,7 @@ export function KeystoneFooter() {
       </footer>
 
       {/* Sticky mobile CTA bar */}
-      <div className="fixed inset-x-0 bottom-0 z-50 border-t border-white/10 bg-[#061e13]/90 px-4 pb-[max(env(safe-area-inset-bottom),0.75rem)] pt-3 backdrop-blur md:hidden">
+      <div className="fixed inset-x-0 bottom-0 z-50 border-t border-white/10 bg-[#000000]/90 px-4 pb-[max(env(safe-area-inset-bottom),0.75rem)] pt-3 backdrop-blur md:hidden">
         <div className="flex gap-3">
           <a
             href={contact.whatsapp}

@@ -186,7 +186,7 @@ export default function KeystonePage() {
       </section>
 
       {/* ── Why us ─────────────────────────────────────────────────────── */}
-      <section className="bg-[#061e13] py-20 text-white md:py-24">
+      <section className="bg-[#000000] py-20 text-white md:py-24">
         <div className="mx-auto max-w-6xl px-5">
           <SectionHead eyebrow="למה לבחור בנו" title="מה הבנק לא מספר לכם" dark />
 
@@ -237,7 +237,7 @@ export default function KeystonePage() {
       <section className="relative overflow-hidden bg-white py-16 md:py-20">
         <span
           aria-hidden
-          className="pointer-events-none absolute inset-x-0 top-0 h-px bg-[#061e13]/10"
+          className="pointer-events-none absolute inset-x-0 top-0 h-px bg-[#000000]/10"
         />
         <div className="mx-auto max-w-6xl px-5">
           <Counters items={stats} />
@@ -344,7 +344,7 @@ export default function KeystonePage() {
           <p className="mt-10 text-center">
             <Link
               href="/blog"
-              className="inline-flex items-center gap-2 rounded-full border-2 border-black px-7 py-3 font-semibold transition-colors hover:bg-[#061e13] hover:text-white"
+              className="inline-flex items-center gap-2 rounded-full border-2 border-black px-7 py-3 font-semibold transition-colors hover:bg-[#000000] hover:text-white"
             >
               לכל המאמרים
               <ArrowLeft aria-hidden className="h-4 w-4" />
@@ -361,7 +361,7 @@ export default function KeystonePage() {
       {/* ── Contact ────────────────────────────────────────────────────── */}
       <section
         id="contact"
-        className="relative scroll-mt-20 overflow-hidden bg-[#061e13] py-20 text-white md:py-24"
+        className="relative scroll-mt-20 overflow-hidden bg-[#000000] py-20 text-white md:py-24"
       >
         <span
           aria-hidden

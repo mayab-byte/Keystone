@@ -44,7 +44,7 @@ export default function ServicesNav() {
       {open && (
         <div
           role="menu"
-          className="absolute start-0 top-full z-50 mt-3 w-64 overflow-hidden rounded-2xl border border-white/10 bg-[#061e13]/95 p-2 shadow-lift backdrop-blur"
+          className="absolute start-0 top-full z-50 mt-3 w-64 overflow-hidden rounded-2xl border border-white/10 bg-[#000000]/95 p-2 shadow-lift backdrop-blur"
         >
           {services.map((s) => (
             <Link

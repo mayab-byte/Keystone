@@ -56,7 +56,7 @@ export default function KeystoneAboutPage() {
     <div dir="rtl" lang="he" className="ks-scope bg-white text-black" style={brand}>
       <KeystoneHeader />
       <main id="main">
-        <header className="bg-[#061e13] py-14 text-white md:py-18">
+        <header className="bg-[#000000] py-14 text-white md:py-18">
           <div className="reveal-down mx-auto max-w-3xl px-5">
             <p className="text-sm font-bold text-(--ks-green)">קצת עלינו</p>
             <h1 className="mt-2 text-3xl font-bold sm:text-4xl">
@@ -144,7 +144,7 @@ export default function KeystoneAboutPage() {
                 key={f.name}
                 className="overflow-hidden rounded-3xl border border-black/8 bg-white shadow-soft"
               >
-                <div className="relative aspect-[4/3] overflow-hidden bg-[#061e13]/5">
+                <div className="relative aspect-[4/3] overflow-hidden bg-[#000000]/5">
                   {/* eslint-disable-next-line @next/next/no-img-element */}
                   <img
                     src={`${BASE}${f.img}`}
@@ -170,7 +170,7 @@ export default function KeystoneAboutPage() {
         <ClientLogos />
 
         {/* ── Closing + CTA ─────────────────────────────────────────────── */}
-        <section className="bg-[#061e13] py-16 text-white md:py-20">
+        <section className="bg-[#000000] py-16 text-white md:py-20">
           <div className="mx-auto max-w-3xl px-5 text-center">
             <h2 className="text-2xl font-bold sm:text-3xl">
               הכל מתחבר, תחת קורת גג אחת

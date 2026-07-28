@@ -24,7 +24,7 @@ export default function KeystoneContactPage() {
     <div dir="rtl" lang="he" className="ks-scope bg-white text-black" style={brand}>
       <KeystoneHeader />
       <main id="main">
-        <header className="bg-[#061e13] py-14 text-white md:py-18">
+        <header className="bg-[#000000] py-14 text-white md:py-18">
           <div className="reveal-down mx-auto max-w-3xl px-5">
             <p className="text-sm font-bold text-(--ks-green)">צור קשר</p>
             <h1 className="mt-2 text-3xl font-bold sm:text-4xl">
