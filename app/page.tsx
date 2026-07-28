@@ -253,36 +253,40 @@ export default function KeystonePage() {
             <img
               src={`${BASE}/testimonials-bg.jpg`}
               alt="משפחה נהנית יחד, לקוחות Keystone"
-              className="absolute inset-0 h-full w-full object-cover object-center"
+              className="absolute inset-0 h-full w-full object-cover object-[62%_50%]"
             />
           </div>
-          {/* Quotes — left side in RTL */}
-          <div className="px-6 py-16 md:order-2 md:px-12 md:py-20">
+          {/* Quotes — left side in RTL; vertical auto-scrolling carousel so the
+              section keeps a fixed height (and the photo isn't stretched/cropped). */}
+          <div className="flex flex-col px-6 py-14 md:order-2 md:px-12 md:py-16">
             <div className="reveal">
               <p className="text-sm font-bold text-(--ks-teal-ink)">המלצות</p>
               <h2 className="mt-2 text-3xl font-bold sm:text-4xl">
                 הלקוחות שלנו מספרים
               </h2>
             </div>
-            <div className="mt-8 space-y-6">
-              {testimonials.map(({ quote, name, detail }) => (
-                <figure
-                  key={name + detail}
-                  className="border-t border-black/10 pt-6 first:border-t-0 first:pt-0"
-                >
-                  <Quote
-                    aria-hidden
-                    className="h-6 w-6 -scale-x-100 text-(--ks-teal)"
-                  />
-                  <blockquote className="mt-3 text-[15px] leading-relaxed text-black/80">
-                    {quote}
-                  </blockquote>
-                  <figcaption className="mt-3">
-                    <p className="font-bold">{name}</p>
-                    <p className="text-sm text-black/60">{detail}</p>
-                  </figcaption>
-                </figure>
-              ))}
+            <div className="vmarquee mt-6 h-[340px] md:h-[400px]">
+              <div className="vmarquee-track">
+                {[...testimonials, ...testimonials].map(({ quote, name, detail }, i) => (
+                  <figure
+                    key={i}
+                    aria-hidden={i >= testimonials.length}
+                    className="shrink-0 border-t border-black/10 pb-6 pt-6"
+                  >
+                    <Quote
+                      aria-hidden
+                      className="h-6 w-6 -scale-x-100 text-(--ks-teal)"
+                    />
+                    <blockquote className="mt-3 text-[15px] leading-relaxed text-black/80">
+                      {quote}
+                    </blockquote>
+                    <figcaption className="mt-3">
+                      <p className="font-bold">{name}</p>
+                      <p className="text-sm text-black/60">{detail}</p>
+                    </figcaption>
+                  </figure>
+                ))}
+              </div>
             </div>
           </div>
         </div>

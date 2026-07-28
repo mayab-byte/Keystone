@@ -146,6 +146,26 @@ body {
   will-change: transform;
 }
 .marquee:hover .logos-track { animation-play-state: paused; }
+
+/* Vertical auto-scrolling testimonials carousel (top→bottom loop). Fixed height
+   with faded top/bottom edges; the track holds two copies of the quotes so the
+   -50% translateY loop is seamless. Pauses on hover; frozen under reduced motion. */
+.vmarquee {
+  overflow: hidden;
+  -webkit-mask-image: linear-gradient(to bottom, transparent, #000 10%, #000 90%, transparent);
+  mask-image: linear-gradient(to bottom, transparent, #000 10%, #000 90%, transparent);
+}
+.vmarquee-track {
+  display: flex;
+  flex-direction: column;
+  animation: ksVMarquee 42s linear infinite;
+  will-change: transform;
+}
+.vmarquee:hover .vmarquee-track { animation-play-state: paused; }
+@keyframes ksVMarquee {
+  from { transform: translateY(0); }
+  to { transform: translateY(-50%); }
+}
 .logo-chip {
   white-space: nowrap;
   font-size: 1.5rem;
