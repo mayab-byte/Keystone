@@ -63,7 +63,7 @@ const reasons = [
 ];
 
 const stats = [
-  { value: 150, prefix: "₪", suffix: "M+", label: "נכסים בניהול" },
+  { value: 200, prefix: "₪", suffix: "M+", label: "נכסים בניהול" },
   { value: 300, suffix: "+", label: "לקוחות מלווים" },
   { value: 17, label: "שנות ניסיון מצטבר" },
   { value: 360, suffix: "°", label: "ראייה פיננסית אחת" },

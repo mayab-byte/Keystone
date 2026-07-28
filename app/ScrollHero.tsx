@@ -262,7 +262,7 @@ export default function ScrollHero() {
                 <Dot /> 17 שנות ניסיון
               </li>
               <li className="flex items-center gap-2">
-                <Dot /> ₪150M+ בניהול
+                <Dot /> ₪200M+ בניהול
               </li>
               <li className="flex items-center gap-2">
                 <Dot /> 300+ לקוחות מלווים
