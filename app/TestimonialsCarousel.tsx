@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useRef } from "react";
-import { Quote, ChevronUp, ChevronDown } from "lucide-react";
+import { Quote, ChevronUp, ChevronDown, Star } from "lucide-react";
 
 /* Vertical testimonials carousel: gentle auto-scroll (top→bottom) the visitor
    can also drive manually — by scrolling/swiping inside the box or with the
@@ -82,6 +82,15 @@ export default function TestimonialsCarousel({
             className="border-t border-black/10 pb-6 pt-6"
           >
             <Quote aria-hidden className="h-6 w-6 -scale-x-100 text-(--ks-teal)" />
+            <div className="mt-2 flex gap-0.5" aria-label="דירוג 5 מתוך 5 כוכבים">
+              {Array.from({ length: 5 }).map((_, s) => (
+                <Star
+                  key={s}
+                  aria-hidden
+                  className="h-3.5 w-3.5 fill-current text-(--ks-teal)"
+                />
+              ))}
+            </div>
             <blockquote className="mt-3 text-[15px] leading-relaxed text-black/80">
               {t.quote}
             </blockquote>
