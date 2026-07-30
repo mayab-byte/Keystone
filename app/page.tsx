@@ -354,7 +354,7 @@ export default function KeystonePage() {
         {/* Brand K watermark behind the form */}
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img
-          src={`${BASE}/keystone-mark.png`}
+          src={`${BASE}/keystone-mark-teal.png`}
           alt=""
           aria-hidden
           className="pointer-events-none absolute -bottom-20 left-[-4rem] w-[38rem] max-w-[75%] opacity-[0.4]"
