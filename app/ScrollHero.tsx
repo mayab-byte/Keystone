@@ -182,7 +182,7 @@ export default function ScrollHero() {
               alt="Keystone"
               className="mx-auto h-36 w-auto drop-shadow-[0_4px_24px_rgba(18,60,62,0.45)] sm:h-48"
             />
-            <p className="mt-6 text-sm tracking-wide text-white/85 sm:text-base">
+            <p className="mt-6 text-lg tracking-wide text-white/85 sm:text-base">
               פיננסים • פנסיוני • פרישה • ביטוח
             </p>
             <span
