@@ -58,7 +58,7 @@ export default function LeadForm({
 
   const dark = tone === "dark";
   // Colours chosen to clear AA contrast on each background.
-  const labelCls = dark ? "text-white" : "text-[#000000]";
+  const labelCls = dark ? "text-white" : "text-[#123C3E]";
   const helpCls = dark ? "text-white/70" : "text-black/60";
   const noteCls = dark ? "text-white/70" : "text-black/55";
   const consentCls = dark ? "text-white/90" : "text-black/75";
@@ -73,7 +73,7 @@ export default function LeadForm({
   );
 
   const fieldCls =
-    "w-full rounded-xl border border-black/25 bg-white px-4 py-3 text-[#000000] placeholder:text-black/55 focus:border-(--ks-teal)";
+    "w-full rounded-xl border border-black/25 bg-white px-4 py-3 text-[#123C3E] placeholder:text-black/55 focus:border-(--ks-teal)";
 
   const row = layout === "row";
 

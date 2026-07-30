@@ -5,21 +5,21 @@ import { WhatsappIcon } from "@/components/icons/social";
 import { contact, partners } from "./site";
 import ServicesNav from "./ServicesNav";
 
-/* Keystone green palette:
-   #000000 (darkest) · #0a3321 (dark) · #446a43 (primary) · #82a68a (sage) ·
-   #c0d0c3 (mist) · #e9f0e0 (light) · #ffffff.
-   Legacy token names (teal/green) are kept but now carry green values.
-   --ks-teal-ink is the darkest green, used for small text/links on light
-   backgrounds so it clears the AA 4.5:1 contrast floor. The gradient is kept
-   light (sage→mist) so it stays legible as headline text and thin accents on
-   dark sections, and reads with dark text on buttons. */
+/* Keystone teal palette:
+   #123C3E (dark — dark sections & text-on-light) · #226D6D (primary accent) ·
+   #61C5BD (bright — accent on dark) · #eef4f3 (light bg) · #ffffff.
+   Legacy token names (teal/green) are kept but now carry teal values.
+   --ks-teal-ink is the darkest teal, used for small text/links on light
+   backgrounds so it clears the AA 4.5:1 contrast floor. The gradient runs
+   bright→primary so it stays legible as headline text and thin accents on the
+   dark teal sections, and reads with dark text on buttons. */
 export const brand = {
-  "--ks-teal": "#446a43",
-  "--ks-teal-ink": "#0a3321",
-  "--ks-green": "#82a68a",
-  "--ks-purple": "#446a43",
-  "--ks-gray": "#c0d0c3",
-  "--ks-grad": "linear-gradient(120deg, #82a68a 0%, #c0d0c3 100%)",
+  "--ks-teal": "#226D6D",
+  "--ks-teal-ink": "#123C3E",
+  "--ks-green": "#61C5BD",
+  "--ks-purple": "#226D6D",
+  "--ks-gray": "#a8c9c6",
+  "--ks-grad": "linear-gradient(120deg, #61C5BD 0%, #226D6D 100%)",
 } as CSSProperties;
 
 /* Typography per the client's request:
@@ -101,11 +101,11 @@ export function KeystoneHeader() {
       `}</style>
       <a
         href="#main"
-        className="sr-only focus:not-sr-only focus:absolute focus:right-3 focus:top-3 focus:z-50 focus:rounded-full focus:bg-[#000000] focus:px-5 focus:py-2.5 focus:font-semibold focus:text-white"
+        className="sr-only focus:not-sr-only focus:absolute focus:right-3 focus:top-3 focus:z-50 focus:rounded-full focus:bg-[#123C3E] focus:px-5 focus:py-2.5 focus:font-semibold focus:text-white"
       >
         דילוג לתוכן הראשי
       </a>
-      <header className="sticky top-0 z-40 border-b border-white/10 bg-[#000000] text-white">
+      <header className="sticky top-0 z-40 border-b border-white/10 bg-[#123C3E] text-white">
         <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-5">
           <Link href="/" aria-label="Keystone · לעמוד הבית">
             <Wordmark className="h-14" />
@@ -141,7 +141,7 @@ export function KeystoneHeader() {
 export function KeystoneFooter() {
   return (
     <>
-      <footer className="border-t border-white/10 bg-[#000000] pb-10 pt-8 text-white">
+      <footer className="border-t border-white/10 bg-[#123C3E] pb-10 pt-8 text-white">
         <div className="mx-auto flex max-w-6xl flex-col items-center gap-4 px-5 text-center">
           <Wordmark className="h-20" />
           <nav aria-label="קישורי ניווט" className="flex flex-wrap justify-center gap-x-6 gap-y-2 text-sm">
@@ -176,7 +176,7 @@ export function KeystoneFooter() {
       </footer>
 
       {/* Sticky mobile CTA bar */}
-      <div className="fixed inset-x-0 bottom-0 z-50 border-t border-white/10 bg-[#000000]/90 px-4 pb-[max(env(safe-area-inset-bottom),0.75rem)] pt-3 backdrop-blur md:hidden">
+      <div className="fixed inset-x-0 bottom-0 z-50 border-t border-white/10 bg-[#123C3E]/90 px-4 pb-[max(env(safe-area-inset-bottom),0.75rem)] pt-3 backdrop-blur md:hidden">
         <div className="flex gap-3">
           <a
             href={contact.whatsapp}

@@ -135,7 +135,7 @@ export default function ScrollHero() {
     >
       <div
         className={
-          "overflow-hidden bg-[#000000] text-white " +
+          "overflow-hidden bg-[#123C3E] text-white " +
           (reducedMotion
             ? "relative min-h-screen"
             : "sticky top-16 h-[calc(100vh-4rem)]")
@@ -159,10 +159,10 @@ export default function ScrollHero() {
         {/* Legibility scrim */}
         <div
           aria-hidden
-          className="absolute inset-0 bg-[#000000]/45"
+          className="absolute inset-0 bg-[#123C3E]/45"
           style={{
             backgroundImage:
-              "radial-gradient(ellipse at center, rgba(0,0,0,0.25) 0%, rgba(0,0,0,0.7) 100%)",
+              "radial-gradient(ellipse at center, rgba(18,60,62,0.25) 0%, rgba(18,60,62,0.7) 100%)",
           }}
         />
 
@@ -180,7 +180,7 @@ export default function ScrollHero() {
             <img
               src={`${BASE}/logo-full.png`}
               alt="Keystone"
-              className="mx-auto h-36 w-auto drop-shadow-[0_4px_24px_rgba(0,0,0,0.45)] sm:h-48"
+              className="mx-auto h-36 w-auto drop-shadow-[0_4px_24px_rgba(18,60,62,0.45)] sm:h-48"
             />
             <p className="mt-6 text-sm tracking-wide text-white/85 sm:text-base">
               פיננסים • פנסיוני • פרישה • ביטוח
@@ -251,7 +251,7 @@ export default function ScrollHero() {
                 href={contact.whatsapp}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 rounded-full border border-white/40 bg-[#000000]/40 px-7 py-3.5 font-semibold text-white transition-colors hover:border-(--ks-green) hover:text-(--ks-green)"
+                className="inline-flex items-center gap-2 rounded-full border border-white/40 bg-[#123C3E]/40 px-7 py-3.5 font-semibold text-white transition-colors hover:border-(--ks-green) hover:text-(--ks-green)"
               >
                 <WhatsappIcon className="h-5 w-5" />
                 דברו איתנו בוואטסאפ
