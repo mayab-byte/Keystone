@@ -59,7 +59,7 @@ export const organizationLd = () => ({
   "@type": "FinancialService",
   name: site.name,
   url: abs("/"),
-  logo: `${site.url}/logo-full.png`,
+  logo: `${site.url}/logo-keystone-teal.png`,
   image: ogImage,
   description: site.description,
   telephone: contact.phone,
@@ -121,7 +121,7 @@ export const articleLd = (a: {
   publisher: {
     "@type": "Organization",
     name: site.name,
-    logo: { "@type": "ImageObject", url: `${site.url}/logo-full.png` },
+    logo: { "@type": "ImageObject", url: `${site.url}/logo-keystone-teal.png` },
   },
   mainEntityOfPage: abs(`/blog/${a.slug}`),
   inLanguage: "he",

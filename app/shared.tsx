@@ -50,7 +50,7 @@ export function Wordmark({ className = "h-10" }: { className?: string }) {
   return (
     // Full brand logo (symbol + wordmark + tagline, white text on dark).
     // eslint-disable-next-line @next/next/no-img-element
-    <img src={`${BASE}/logo-full.png`} alt="Keystone" className={`w-auto ${className}`} />
+    <img src={`${BASE}/logo-keystone-teal.png`} alt="Keystone" className={`w-auto ${className}`} />
   );
 }
 

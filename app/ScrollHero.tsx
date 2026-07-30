@@ -178,7 +178,7 @@ export default function ScrollHero() {
           <div className={reducedMotion ? "" : stageCls} style={style(0)}>
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
-              src={`${BASE}/logo-full.png`}
+              src={`${BASE}/logo-keystone-teal.png`}
               alt="Keystone"
               className="mx-auto h-36 w-auto drop-shadow-[0_4px_24px_rgba(18,60,62,0.45)] sm:h-48"
             />
