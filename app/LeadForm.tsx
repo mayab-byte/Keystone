@@ -8,16 +8,19 @@ import { ArrowLeft } from "lucide-react";
    consent and a submit button — all fields required and marked as such.
    Fields are fully opaque (no translucency) for AA readability.
 
-   On submit the visitor lands on the /thank-you confirmation page. If a form
-   endpoint is configured (NEXT_PUBLIC_FORM_ENDPOINT — e.g. a Formspree URL) the
-   details are POSTed there first so the partners actually receive the lead;
-   without it the form only shows the thank-you page (no delivery yet).
+   On submit the details are POSTed to FormSubmit (no backend/signup needed)
+   so the lead is emailed straight to the partner, then the visitor lands on
+   the /thank-you confirmation page. A one-time activation email arrives on
+   the first submission and must be confirmed once for delivery to begin.
    WhatsApp is intentionally NOT wired here — it lives as its own contact link.
 
    `tone` adapts the label/helper colours to the surrounding background so
    text always clears AA contrast: "dark" for dark sections, "light" for
    light/cream sections. `layout="row"` spreads the fields across the width
    on desktop (used on the service pages). */
+
+/* Leads are emailed here via FormSubmit's AJAX endpoint (Achlufi's inbox). */
+const LEAD_ENDPOINT = "https://formsubmit.co/ajax/shlomiac.ins@gmail.com";
 
 export default function LeadForm({
   tone = "dark",
@@ -36,22 +39,24 @@ export default function LeadForm({
 
   const submit = async (e: React.FormEvent) => {
     e.preventDefault();
-    const endpoint = process.env.NEXT_PUBLIC_FORM_ENDPOINT;
-    if (endpoint) {
-      try {
-        await fetch(endpoint, {
-          method: "POST",
-          headers: { "Content-Type": "application/json", Accept: "application/json" },
-          body: JSON.stringify({
-            name: name.trim(),
-            phone: phone.trim(),
-            email: email.trim(),
-            consent,
-          }),
-        });
-      } catch {
-        /* Ignore network errors so the visitor still gets the confirmation. */
-      }
+    // Deliver the lead by email via FormSubmit (no backend/signup). Hebrew keys
+    // become the labels in the email; the partner receives a one-time activation
+    // email on the first submission and must confirm it once.
+    try {
+      await fetch(LEAD_ENDPOINT, {
+        method: "POST",
+        headers: { "Content-Type": "application/json", Accept: "application/json" },
+        body: JSON.stringify({
+          "שם מלא": name.trim(),
+          טלפון: phone.trim(),
+          אימייל: email.trim(),
+          "הסכמת דיוור": consent ? "כן" : "לא",
+          _subject: "ליד חדש מאתר Keystone",
+          _template: "table",
+        }),
+      });
+    } catch {
+      /* Ignore network errors so the visitor still gets the confirmation. */
     }
     router.push("/thank-you");
   };
