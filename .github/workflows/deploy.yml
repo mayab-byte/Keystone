@@ -41,8 +41,10 @@ jobs:
 
       - name: Build static site
         env:
-          # Host under the repository sub-path: https://<owner>.github.io/Keystone
-          NEXT_PUBLIC_BASE_PATH: /Keystone
+          # Served at the root of the custom domain (keystonefinance.co.il), so
+          # NO basePath. Real domain → canonical URLs + indexable for search.
+          NEXT_PUBLIC_SITE_URL: https://keystonefinance.co.il
+          NEXT_PUBLIC_INDEXABLE: "true"
         run: npm run build
 
       - name: Disable Jekyll processing
