@@ -22,6 +22,10 @@ export const metadata: Metadata = {
   robots: site.indexable
     ? { index: true, follow: true }
     : { index: false, follow: false },
+  // Google Search Console ownership verification (HTML-tag method).
+  verification: {
+    google: "QbAulONMuiXY7X8EA8GRGPTKelceomaoU74VESacXUc",
+  },
   openGraph: {
     type: "website",
     siteName: site.name,
